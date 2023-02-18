@@ -51,5 +51,5 @@ function NavBar() {
     );
 }
 
-// default export — only one default export - asuppose to named export
-export default NavBar
+// named export — can have many named export - asuppose to default export
+export { NavBar };
