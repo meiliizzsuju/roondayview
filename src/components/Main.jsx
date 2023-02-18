@@ -1,13 +1,16 @@
-import Title from "./styled/Title";
+import { useState } from "react";
+import SearchBar from "./searchbar/SearchBar";
 
 
 function Main() {
+    const [searchTerm, setSearchTerm] = useState('');
+
     return (
 
         <main>
-            <Title>
-                Welcome to Roondayview !
-            </Title>
+            <div className="main__top">
+                <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+            </div>
         </main>
 
     );
