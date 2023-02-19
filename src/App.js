@@ -9,6 +9,8 @@ import { FeaturedMenu } from './components/FeaturedMenu';
 import { NewMenu } from './components/NewMenu';
 import { Blogs } from './components/Blogs';
 import { Reservations } from './components/Reservations';
+import { SignIn } from './components/SignIn';
+import { Admin } from './components/Admin';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path='blog' element={<Blogs />} />
           <Route path='reservation' element={<Reservations />} />
           <Route path='order-summary' element={<OrderSummary />} />
+          <Route path='admin' element={<Admin />} />
+          <Route path='sign-in' element={<SignIn />} />
           <Route path='staff' element={<RestaurantStaff />}>
             <Route index element={<FeaturedMenu />} />
             <Route path='featured' element={<FeaturedMenu/>} />

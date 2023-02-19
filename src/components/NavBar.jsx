@@ -26,6 +26,12 @@ export const NavBar = () => {
         <NavLink style={navLinkStyles} to='/reservation'>
             Reservations
         </NavLink>
+        <NavLink style={navLinkStyles} to='/sign-in'>
+            Sign In
+        </NavLink>
+        <NavLink style={navLinkStyles} to='/Admin'>
+            Admin
+        </NavLink>
     </nav>
   )
 }
