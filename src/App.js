@@ -13,7 +13,7 @@ import { Reservations } from './components/Reservations';
 import { Users } from './components/Users';
 import { UserDetails } from './components/UserDetails';
 import { Admin } from './components/Admin';
-import { Login } from './components/LogIn';
+import { Login } from './components/login/LogIn';
 import { Profile } from './components/Profile'
 import { AuthProvider } from './components/Auth';
 import { RequireAuth } from './components/RequireAuth';
