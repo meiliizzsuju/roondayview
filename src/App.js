@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-// import { Contact } from './components/Contact';
 import { NavBar } from './components/navbar/NavBar'
 import { OrderSummary } from './components/OrderSummary';
 import { NoMatch } from './components/NoMatch';
@@ -18,7 +17,7 @@ import { Login } from './components/LogIn';
 import { Profile } from './components/Profile'
 import { AuthProvider } from './components/Auth';
 import { RequireAuth } from './components/RequireAuth';
-const LazyContact = React.lazy(() => import('./components/Contact'))
+const LazyContact = React.lazy(() => import('./components/contact/Contact'))
 
 function App() {
   return (
