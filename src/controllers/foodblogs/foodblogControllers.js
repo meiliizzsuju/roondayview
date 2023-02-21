@@ -11,11 +11,19 @@ const foodblogs = [
     }
 ]
 
+// Get all food blogs in the database
 function getFoodblogs () {
     return foodblogs
 }
 
+// Get a specific food blog in the database based on the ID
+function getFoodblogByID (foodblogID) {
+    const foodblog = foodblogs[foodblogID]
+    return foodblog
+}
+
 module.exports = {
-    getFoodblogs
+    getFoodblogs,
+    getFoodblogByID
 }
 

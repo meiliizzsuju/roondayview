@@ -1,4 +1,5 @@
 const express = require("express")
+const foodblogRouter = require("./controllers/foodblogs/foodblogRoutes")
 
 const app = express()
 
@@ -9,6 +10,8 @@ app.get("/", (request, response) => {
         data: "Data send"
     })
 })
+
+app.use("/foodblogs", foodblogRouter)
 
 app.listen(PORT, () => {
     console.log("Server Started")
