@@ -1,0 +1,18 @@
+.searchbar{
+    margin: 2rem 1rem;
+}
+
+.searchbar__container input{
+    width: 100%;
+    line-height: 1rem;
+    border-radius: 50px;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
+@media screen and (min-width: 900px) {
+    .searchbar{
+        margin: 3rem 2rem;
+    }
+}

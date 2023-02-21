@@ -23,13 +23,23 @@ code {
   --color-text-light: #fff;
 }
 
-html{
+html,
+input{
   font-size: 14px;
+}
+
+input{
+  padding: 0.75rem;
 }
 
 
 @media screen and (min-width: 900px) {
-  body{
+  body,
+  input{
     font-size: 1.5rem;
+  }
+
+  input{
+    padding: 1rem;
   }
 }
