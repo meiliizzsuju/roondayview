@@ -14,7 +14,7 @@ import { Users } from './components/Users';
 import { UserDetails } from './components/UserDetails';
 import { Admin } from './components/Admin';
 import { Login } from './components/login/LogIn';
-import { Profile } from './components/Profile'
+import { Profile } from './components/profile/Profile'
 import { AuthProvider } from './components/Auth';
 import { RequireAuth } from './components/RequireAuth';
 const LazyContact = React.lazy(() => import('./components/contact/Contact'))
