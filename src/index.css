@@ -12,17 +12,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.primary-nav {
-  background-color: aliceblue;
-  padding: 16pc 32 px;
+
+:root {
+  --font-family: 'Lato', sans-serif;
+  --font-family-head: 'Rufina', serif;
+
+  --color-primary: #A9A9A9;
+  
+  --color-text: #050505;
+  --color-text-light: #fff;
 }
 
-nav a {
-  margin-right: 16px;
+html{
+  font-size: 14px;
 }
 
-/*
-nav a.active {
-  text-decoration: none;
-  font-weight: bold;
-}*/
+
+@media screen and (min-width: 900px) {
+  body{
+    font-size: 1.5rem;
+  }
+}

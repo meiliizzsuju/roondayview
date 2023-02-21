@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './components/Home';
 // import { Contact } from './components/Contact';
-import { NavBar } from './components/NavBar'
+import { NavBar } from './components/navbar/NavBar'
 import { OrderSummary } from './components/OrderSummary';
 import { NoMatch } from './components/NoMatch';
 import { RestaurantStaff } from './components/RestaurantStaff';
