@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../Auth'
-
 import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
+//import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
@@ -14,7 +13,9 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import './navbar.css';
 
-const Menu = (navLinkStyles,auth) =>{
+const Menu = (navLinkStyles) =>{
+    const auth = useAuth()
+    console.log('auth',auth.user)
     return (
         <nav className='primary-nav'>
             <ul>
@@ -84,7 +85,6 @@ export const NavBar = () => {
         setState(open);
     };
 
-    const auth = useAuth()
 
   return (
     <AppBar position="static" className='navbar'>
@@ -135,7 +135,6 @@ export const NavBar = () => {
                 <Box sx={{ mb: 2 }}>
                     <Menu
                         navLinkStyles={navLinkStyles}
-                        auth={auth}
                     />
                 </Box>
 
@@ -152,7 +151,6 @@ export const NavBar = () => {
             >
                 <Menu
                     navLinkStyles={navLinkStyles}
-                    auth={auth}
             />
             </Box>
         </div>
