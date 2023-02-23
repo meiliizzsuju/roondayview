@@ -22,8 +22,22 @@ function getFoodblogByID (foodblogID) {
     return foodblog
 }
 
+
+// Insert the foodblog into the database and return that created floodblog
+function createFoodblog (foodblog) {
+    const newFoodblog = {
+        id: 4,
+        ...foodblog,
+    }
+
+    return newFoodblog
+}
+
+
+
 module.exports = {
     getFoodblogs,
-    getFoodblogByID
+    getFoodblogByID,
+    createFoodblog
 }
 

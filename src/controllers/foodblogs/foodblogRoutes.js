@@ -1,6 +1,10 @@
 const express = require("express")
 
-const { getFoodblogs, getFoodblogByID } = require("./foodblogControllers.js")
+
+
+const { getFoodblogs, 
+        getFoodblogByID,
+        createFoodblog  } = require("./foodblogControllers.js")
 
 const foodblogRouter = express.Router()
 
@@ -23,6 +27,16 @@ foodblogRouter.get("/:foodblogID", (request, response) => {
         })
     }
     // Respond and return the foodblog data as a json
+    response.json(foodblog)
+})
+
+foodblogRouter.post("/", (request, response) => {
+    const foodblog = createFoodblog({
+        title: request.body.title,
+        description: request.body.description,
+        theme: request.body.theme
+    })
+
     response.json(foodblog)
 })
 
