@@ -1,34 +1,26 @@
-const foodblogs = [
-    {
-        title: "Chartime",
-        description: "Good amazing korean food",
-        price_range: 20,
-    },
-    {
-        title: "Chartime",
-        description: "Good amazing korean food",
-        price_range: 20,
-    }
-]
+const Foodblog = require("../../models/foodblog")
 
 // Get all food blogs in the database
-function getFoodblogs () {
+async function getFoodblogs () {
+    const foodblogs = await Foodblog.find()
     return foodblogs
 }
 
 // Get a specific food blog in the database based on the ID
-function getFoodblogByID (foodblogID) {
-    const foodblog = foodblogs[foodblogID]
-    return foodblog
+async function getFoodblogByID (foodblogID) {
+    try{
+        const foodblog = await Foodblog.find[foodblogID]
+        return foodblog
+    } catch(err){
+        // Catch error and return them to the console
+        console.log(err)
+    }
 }
 
 
 // Insert the foodblog into the database and return that created floodblog
-function createFoodblog (foodblog) {
-    const newFoodblog = {
-        id: 4,
-        ...foodblog,
-    }
+async function createFoodblog (foodblog) {
+    const newFoodblog = await Foodblog.create(foodblog)
 
     return newFoodblog
 }

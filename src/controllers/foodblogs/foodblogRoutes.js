@@ -1,7 +1,5 @@
 const express = require("express")
 
-
-
 const { getFoodblogs, 
         getFoodblogByID,
         createFoodblog  } = require("./foodblogControllers.js")
@@ -9,9 +7,9 @@ const { getFoodblogs,
 const foodblogRouter = express.Router()
 
 // This will get all the foodblogs data
-foodblogRouter.get("/", (request, response) => {
+foodblogRouter.get("/", async (request, response) => {
     // The foodblogs variable will perform the same function as getFoodblogs()
-    const foodblogs = getFoodblogs()
+    const foodblogs = await getFoodblogs()
     // Return the data of foodblogs will be returned in a json
     response.json(foodblogs)
 })
