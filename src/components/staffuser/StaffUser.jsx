@@ -105,7 +105,7 @@ const StaffUser = () => {
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <Tabs value={value} onChange={handleChange} aria-label="Form navigator" className='staffuser__tabs'>
                         <Tab label="Add New Menu" {...a11yProps(0)} />
-                        <Tab label="Item Two" {...a11yProps(1)} />
+                        <Tab label="Update Existing Menu" {...a11yProps(1)} />
                         <Tab label="Item Three" {...a11yProps(2)} />
                     </Tabs>
                 </Box>
@@ -195,7 +195,88 @@ const StaffUser = () => {
                 >
                 {value === 1 && (
                     <Box sx={{ p: 3 }}>
-                        Item 2
+                        <div className='staffuser__box'>
+                            <div>
+                                <h3>Update Existing Menu</h3>
+
+                                <div className='form-control relative'>
+                                    <input type="text" name="updateitem__search" placeholder='Name'
+                                        value={updateitem__search}
+                                        onChange={(e)=> setUpdateItem_search(e.target.value)}
+                                        className={(updateitemfields&&updateitem__search === '') ? (inputErrorState) : ('')}
+                                    />
+                                    {(updateitemfields&&additem_name === '') &&(
+                                    <span className='error-message'>Please provide 'name'</span>
+                                    )}
+                                </div>
+                                <div className='form-control relative'>
+                                    <label htmlFor="additem">Price</label>
+                                    <input type="text" name="additem" placeholder='Input Dollar amount'
+                                        value={updateitem__price}
+                                        onChange={(e)=> setUpdateItem_price(e.target.value)}
+                                        className={(updateitemfields&&updateitem__price === '') ? (inputErrorState) : ('')}
+                                    />
+                                    {(updateitemfields&&updateitem__price === '') &&(
+                                    <span className='error-message'>Please provide 'price'</span>
+                                    )}
+                                </div>
+                                <div className='form-control form-control--select relative'>
+                                    <label htmlFor="additem">Availability</label>
+                                    <Select
+                                        labelId="updateitem__avail-label"
+                                        id="updateitem__avail"
+                                        value={updateitem__avail}
+                                        onChange={(e)=> setUpdateItem_avail(e.target.value)}
+                                    >
+                                    <MenuItem value={10}>Available</MenuItem>
+                                    <MenuItem value={20}>Temporarily Unavailable</MenuItem>
+                                    <MenuItem value={30}>No Longer Available</MenuItem>
+                                    </Select>
+                                    {(updateitemfields&&additem_price === '') &&(
+                                    <span className='error-message'>Please select</span>
+                                    )}
+                                </div>
+                                <div className='form-control relative'>
+                                    <label htmlFor="additem">Description</label>
+                                    <textarea type="text" name="additem" placeholder='Provide description'
+                                        value={updateitem__desc}
+                                        onChange={(e)=> setUpdateItem_desc(e.target.value)}
+                                        className={(updateitemfields&&updateitem__desc === '') ? (inputErrorState) : ('')}
+                                    />
+                                    {(updateitemfields&&updateitem__desc === '') &&(
+                                    <span className='error-message'>Please provide 'description'</span>
+                                    )}
+                                </div>
+                                <div className='form-control relative'>
+                                    <label htmlFor="additem">Ingredients</label>
+                                    <textarea type="text" name="additem" placeholder='Provide Ingredients'
+                                        value={updateitem__ingre}
+                                        onChange={(e)=> setUpdateItem_ingre(e.target.value)}
+                                        className={(updateitemfields&&updateitem__ingre === '') ? (inputErrorState) : ('')}
+                                    />
+                                    {(updateitemfields&&updateitem__ingre === '') &&(
+                                    <span className='error-message'>Please provide 'ingredients'</span>
+                                    )}
+                                </div>
+
+                                <div className='staffuser__box--bottom'>
+                                <button
+                                    type="button"
+                                    onClick={clearUpdateItemFields}
+                                    className="btn btn-form"
+                                >
+                                    Discard
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={UpdateItem}
+                                    className="btn btn-form"
+                                >
+                                    Post
+                                </button>
+                                </div>
+                            </div>
+                        </div>
                     </Box>
                 )}
                 </div>
