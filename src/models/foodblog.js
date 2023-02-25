@@ -7,9 +7,21 @@ const ReviewSchema = new mongoose.Schema({
 })
 
 const FoodblogSchema = new mongoose.Schema({
-    title: String,
-    description: String,
-    theme: String,
+    title: {
+        type: String,
+        required: true,
+        minLength: 8
+    },
+    description:{
+        type: String,
+        required: true,
+        minLength: 10
+    },
+    theme: {
+        type: String,
+        required: true,
+        
+    },
     reviews: [ReviewSchema],
 })
 

@@ -2,7 +2,8 @@ const express = require("express")
 
 const { getFoodblogs, 
         getFoodblogByID,
-        createFoodblog  } = require("./foodblogControllers.js")
+        createFoodblog,
+        deleteFoodblog  } = require("./foodblogControllers.js")
 
 const foodblogRouter = express.Router()
 
@@ -15,9 +16,9 @@ foodblogRouter.get("/", async (request, response) => {
 })
 
 // This will get a specific foodblog data
-foodblogRouter.get("/:foodblogID", (request, response) => {
+foodblogRouter.get("/:foodblogId",  async (request, response) => {
     // The variable foodblog will perform the same function getFoodblogByID().
-    const foodblog = getFoodblogByID(request.params.foodblogID)
+    const foodblog = getFoodblogByID(request.params.foodblogId)
     // If there isn't a foodblog that has the specific id, return an error message
     if(!foodblog){
         response.status(404).json({
@@ -35,6 +36,11 @@ foodblogRouter.post("/", (request, response) => {
         theme: request.body.theme
     })
 
+    response.json(foodblog)
+})
+
+foodblogRouter.delete("/:foodblogId", async (request, response) => {
+    const foodblog = await deleteFoodblog(request.params.foodblogId)
     response.json(foodblog)
 })
 

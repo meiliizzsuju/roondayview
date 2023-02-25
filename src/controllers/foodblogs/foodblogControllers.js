@@ -7,9 +7,9 @@ async function getFoodblogs () {
 }
 
 // Get a specific food blog in the database based on the ID
-async function getFoodblogByID (foodblogID) {
+async function getFoodblogByID (foodblogId) {
     try{
-        const foodblog = await Foodblog.find[foodblogID]
+        const foodblog = await Foodblog.find[foodblogId]
         return foodblog
     } catch(err){
         // Catch error and return them to the console
@@ -19,10 +19,15 @@ async function getFoodblogByID (foodblogID) {
 
 
 // Insert the foodblog into the database and return that created floodblog
-async function createFoodblog (foodblog) {
+async function createFoodblog(foodblog) {
     const newFoodblog = await Foodblog.create(foodblog)
 
     return newFoodblog
+}
+
+async function deleteFoodblog(foodblogId){
+    const deletedFoodblog = await Foodblog.findByIdAndDelete(foodblogId)
+    return deleteFoodblog
 }
 
 
@@ -30,6 +35,7 @@ async function createFoodblog (foodblog) {
 module.exports = {
     getFoodblogs,
     getFoodblogByID,
-    createFoodblog
+    createFoodblog,
+    deleteFoodblog
 }
 
