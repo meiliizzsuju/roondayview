@@ -30,7 +30,7 @@ const Menu = (navLinkStyles) =>{
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink style={navLinkStyles} to='/staff'>
+                    <NavLink style={navLinkStyles} to='/staff-user'>
                         Staff
                     </NavLink>
                 </li>
