@@ -170,7 +170,7 @@ const StaffUser = () => {
                                 </div>
                                 <div className='form-control relative'>
                                     <label htmlFor="additem">Price</label>
-                                    <input type="text" name="additem" placeholder='Input Dollar amount'
+                                    <input type="text" name="additem" placeholder='Estimated Price/ Price Range'
                                         value={additem_price}
                                         onChange={(e)=> setAdditem_price(e.target.value)}
                                         className={(additemfields&&additem_price === '') ? (inputErrorState) : ('')}
@@ -247,7 +247,7 @@ const StaffUser = () => {
                                 </div>
                                 <div className='form-control relative'>
                                     <label htmlFor="additem">Price</label>
-                                    <input type="text" name="additem" placeholder='Input Dollar amount'
+                                    <input type="text" name="additem" placeholder='Estimated Price/ Price Range'
                                         value={updateitem_price}
                                         onChange={(e)=> setUpdateItem_price(e.target.value)}
                                         className={(updateitemfields&&updateitem_price === '') ? (inputErrorState) : ('')}
