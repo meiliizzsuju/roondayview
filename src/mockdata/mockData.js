@@ -107,3 +107,26 @@ export const blogMockData = [
     price: "9999"
   },
 ]
+
+
+
+export const userMockData = [
+  {
+    username: "thisisme",
+  },
+  {
+    username: "thisisyou",
+  },
+  {
+    username: "nobody",
+  },
+  {
+    username: "thisisme1",
+  },
+  {
+    username: "thisisyou1",
+  },
+  {
+    username: "nobody1",
+  },
+]
