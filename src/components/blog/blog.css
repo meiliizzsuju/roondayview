@@ -1,0 +1,10 @@
+.blogpage{
+    padding: 2rem 1rem;
+}
+
+
+@media screen and (min-width: 900px) {
+    .blogpage{
+        padding: 3rem 2rem;
+    }
+}

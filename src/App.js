@@ -7,7 +7,7 @@ import { NoMatch } from './components/NoMatch';
 import { RestaurantStaff } from './components/RestaurantStaff';
 import { FeaturedMenu } from './components/FeaturedMenu';
 import { NewMenu } from './components/NewMenu';
-import { Blogs } from './components/Blogs';
+import { Blogs } from './components/blog/Blogs';
 import { BlogDetails } from './components/BlogDetails';
 import { Reservations } from './components/Reservations';
 import { Users } from './components/Users';
