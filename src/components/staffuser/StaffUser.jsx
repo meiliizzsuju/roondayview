@@ -14,13 +14,13 @@ const StaffUser = () => {
     const [additem_name, setAdditem_name] = useState('');
     const [additem_price, setAdditem_price] = useState('');
     const [additem_desc, setAdditem_desc] = useState('');
-    const [additem_ingre, setAdditem_ingre] = useState('');
+    const [additem_type, setAdditem_type] = useState('');
 
     const [updateitem_search, setUpdateItem_search] = useState('');
     const [updateitem_price, setUpdateItem_price] = useState('');
     const [updateitem_avail, setUpdateItem_avail] = useState(10);
     const [updateitem_desc, setUpdateItem_desc] = useState('');
-    const [updateitem_ingre, setUpdateItem_ingre] = useState('');
+    const [updateitem_type, setUpdateItem_type] = useState('');
 
     const [restaurantDetail_tags, setRestaurantDetail_tags] = useState('');
     const [restaurantDetail_hours, setRestaurantDetail_hours] = useState('');
@@ -42,15 +42,15 @@ const StaffUser = () => {
 
 
     const addNewItem = () =>{
-        if(additem_name,additem_price,additem_desc,additem_ingre){
+        if(additem_name,additem_price,additem_desc,additem_type){
             // to be added to BE with staffId
-            console.log(additem_name,additem_price,additem_desc,additem_ingre)
+            console.log(additem_name,additem_price,additem_desc,additem_type)
 
             alert('Item has been added');
             setAdditem_name('')
             setAdditem_price('')
             setAdditem_desc('')
-            setAdditem_ingre('')
+            setAdditem_type('')
         } else{
             setAddItemFields(true);
 
@@ -64,16 +64,16 @@ const StaffUser = () => {
     }
 
     const UpdateItem = () =>{
-        if(updateitem_search,updateitem_price,updateitem_avail,updateitem_desc,updateitem_ingre){
+        if(updateitem_search,updateitem_price,updateitem_avail,updateitem_desc,updateitem_type){
             // to be added to BE with staffId
-            console.log(updateitem_search,updateitem_price,updateitem_avail,updateitem_desc,updateitem_ingre)
+            console.log(updateitem_search,updateitem_price,updateitem_avail,updateitem_desc,updateitem_type)
 
             alert('Item had been updated');
             setUpdateItem_search('')
             setUpdateItem_price('')
             setUpdateItem_avail(10)
             setUpdateItem_desc('')
-            setUpdateItem_ingre('')
+            setUpdateItem_type('')
         } else{
             setUpdateItemFields(true);
 
@@ -113,7 +113,7 @@ const StaffUser = () => {
         setAdditem_name('')
         setAdditem_price('')
         setAdditem_desc('')
-        setAdditem_ingre('')
+        setAdditem_type('')
     }
 
     const clearUpdateItemFields = () =>{
@@ -121,7 +121,7 @@ const StaffUser = () => {
         setUpdateItem_price('')
         setUpdateItem_avail(10)
         setUpdateItem_desc('')
-        setUpdateItem_ingre('')
+        setUpdateItem_type('')
     }
 
     const clearResDetailFields = () =>{
@@ -191,14 +191,14 @@ const StaffUser = () => {
                                     )}
                                 </div>
                                 <div className='form-control relative'>
-                                    <label htmlFor="additem">Ingredients</label>
-                                    <textarea type="text" name="additem" placeholder='Provide Ingredients'
-                                        value={additem_ingre}
-                                        onChange={(e)=> setAdditem_ingre(e.target.value)}
-                                        className={(additemfields&&additem_ingre === '') ? (inputErrorState) : ('')}
+                                    <label htmlFor="additem">Cousine</label>
+                                    <textarea type="text" name="additem" placeholder='Provide Cousine'
+                                        value={additem_type}
+                                        onChange={(e)=> setAdditem_type(e.target.value)}
+                                        className={(additemfields&&additem_type === '') ? (inputErrorState) : ('')}
                                     />
-                                    {(additemfields&&additem_ingre === '') &&(
-                                    <span className='error-message'>Please provide 'ingredients'</span>
+                                    {(additemfields&&additem_type === '') &&(
+                                    <span className='error-message'>Please provide 'cousine'</span>
                                     )}
                                 </div>
 
@@ -284,14 +284,14 @@ const StaffUser = () => {
                                     )}
                                 </div>
                                 <div className='form-control relative'>
-                                    <label htmlFor="additem">Ingredients</label>
-                                    <textarea type="text" name="additem" placeholder='Provide Ingredients'
-                                        value={updateitem_ingre}
-                                        onChange={(e)=> setUpdateItem_ingre(e.target.value)}
-                                        className={(updateitemfields&&updateitem_ingre === '') ? (inputErrorState) : ('')}
+                                    <label htmlFor="additem">Cousine</label>
+                                    <textarea type="text" name="additem" placeholder='Provide Cousine'
+                                        value={updateitem_type}
+                                        onChange={(e)=> setUpdateItem_type(e.target.value)}
+                                        className={(updateitemfields&&updateitem_type === '') ? (inputErrorState) : ('')}
                                     />
-                                    {(updateitemfields&&updateitem_ingre === '') &&(
-                                    <span className='error-message'>Please provide 'ingredients'</span>
+                                    {(updateitemfields&&updateitem_type === '') &&(
+                                    <span className='error-message'>Please provide 'cousine'</span>
                                     )}
                                 </div>
 
