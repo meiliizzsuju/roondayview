@@ -2,9 +2,25 @@
     padding: 2rem 1rem;
 }
 
+.blogpage__feed{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.blogpage__feed .blogpreview{
+    width: 100%;
+}
+
+
 
 @media screen and (min-width: 900px) {
     .blogpage{
         padding: 3rem 2rem;
+    }
+
+    .blogpage__feed .blogpreview{
+        width: calc(33.33% - 2rem);
     }
 }

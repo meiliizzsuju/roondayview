@@ -31,9 +31,8 @@ function App() {
             <LazyContact />
           </React.Suspense>}
            />
-          <Route path='blog' element={<Blogs />}>
-            <Route path=':blogId' element={<BlogDetails />} /> 
-          </Route>
+          <Route path='blog' element={<Blogs />}/>
+          <Route path='blog/:blogId' element={<BlogDetails />} /> 
           <Route path='reservation' element={<Reservations />} />
           <Route path='order-summary' element={<OrderSummary />} />
           <Route path='staff-user' element={<StaffUser />} />

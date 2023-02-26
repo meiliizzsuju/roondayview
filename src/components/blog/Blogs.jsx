@@ -28,7 +28,11 @@ export const Blogs = () => {
         </div>
 
         <div className='blogpage__feed'>
-
+            {
+              blogMockData.map((blog,i)=>(
+                <BlogPreview blog={blog} key={blog.id+'-'+i}/>
+              ))
+            }
         </div>
       </Container>
     </div>
