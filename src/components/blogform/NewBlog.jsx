@@ -13,7 +13,7 @@ const NewBlog = ({user}) => {
     const [b_price, setB_price] = useState('');
     const [b_restaurants, setB_restaurants] = useState('');
     const [b_desc, setB_desc] = useState('');
-    const [b_ingre, setB_ingre] = useState('');
+    const [b_type, setB_type] = useState('');
 
     const restaurant_rest = restaurantMockData;
 
@@ -37,7 +37,7 @@ const NewBlog = ({user}) => {
             setB_price('')
             setB_restaurants('')
             setB_desc('')
-            setB_ingre('')
+            setB_type('')
         } else{
             seBlogFields(true);
 
@@ -56,7 +56,7 @@ const NewBlog = ({user}) => {
         setB_price('')
         setB_restaurants('')
         setB_desc('')
-        setB_ingre('')
+        setB_type('')
     }
 
 
@@ -133,14 +133,14 @@ const NewBlog = ({user}) => {
             </div>
 
             <div className='form-control relative'>
-                <label htmlFor="b_ingre">Ingredients</label>
-                <textarea type="text" name="b_ingre" placeholder='Provide description'
-                    value={b_ingre}
-                    onChange={(e)=> setB_ingre(e.target.value)}
-                    className={(blogFields&&b_ingre === '') ? (inputErrorState) : ('')}
+                <label htmlFor="b_type">Cousine</label>
+                <textarea type="text" name="b_type" placeholder='Provide Cousine type'
+                    value={b_type}
+                    onChange={(e)=> setB_type(e.target.value)}
+                    className={(blogFields&&b_type === '') ? (inputErrorState) : ('')}
                 />
-                {(blogFields&&b_ingre === '') &&(
-                <span className='error-message'>Please provide 'Ingredients'</span>
+                {(blogFields&&b_type === '') &&(
+                <span className='error-message'>Please provide 'cousine'</span>
                 )}
             </div>
 
