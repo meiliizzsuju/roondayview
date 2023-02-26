@@ -47,42 +47,46 @@ export const restaurantMockData = [
 
 export const blogMockData = [
   {
-    name: "Mock Blog 1",
+    name: "Mock Blog 1 Japanese",
     id: "mb-1",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     img: "",
     restaurant_id: 'rm-5',
-    price: "9999"
+    price: "9999",
+    type: 'Japanese'
   },
   {
-    name: "Mock Blog 2",
+    name: "Mock Blog 2 Thai",
     id: "mb-2",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     img: "",
     restaurant_id: 'rm-1',
-    price: "9999"
+    price: "9999",
+    type: 'Thai'
   },
   {
-    name: "Mock Blog 3",
+    name: "Mock Blog 3 Vietnamese",
     id: "mb-3",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     img: "",
     restaurant_id: 'rm-3',
-    price: "9999"
+    price: "9999",
+    type: 'Vietnamese'
   },
   {
-    name: "Mock Blog 4",
+    name: "Mock Blog 4 Korean",
     id: "mb-4",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     img: "",
     restaurant_id: 'rm-2',
-    price: "9999"
+    price: "9999",
+    type: 'Korean'
   },
   {
     name: "Mock Blog 5",
     id: "mb-5",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    img: "",
+    img: "https://picsum.photos/seed/picsum/650/350",
     restaurant_id: 'rm-1',
     price: "9999"
   },

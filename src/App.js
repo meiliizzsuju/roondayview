@@ -8,7 +8,7 @@ import { RestaurantStaff } from './components/RestaurantStaff';
 import { FeaturedMenu } from './components/FeaturedMenu';
 import { NewMenu } from './components/NewMenu';
 import { Blogs } from './components/blog/Blogs';
-import { BlogDetails } from './components/BlogDetails';
+import { BlogDetails } from './components/blog/BlogDetails';
 import { Reservations } from './components/Reservations';
 import { Users } from './components/Users';
 import { UserDetails } from './components/UserDetails';

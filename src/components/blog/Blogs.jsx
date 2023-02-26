@@ -1,7 +1,6 @@
 import { Container } from '@mui/material';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import NewBlog from '../blogform/NewBlog';
-import {blogMockData} from '../../mockdata/mockData';
 
 import './blog.css';
 import BlogFeed from './BlogFeed';
@@ -9,7 +8,6 @@ import BlogFeed from './BlogFeed';
 export const Blogs = () => {
   const [show, setShow] = useState(false);
   const user = 'user object to be implement' // parsing user object
-  const blogData = blogMockData;
 
   const handleClick = () => {
     setShow(!show);

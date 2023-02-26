@@ -1,5 +1,5 @@
 import React from 'react';
-import {blogMockData} from '../../mockdata/mockData';
+import {blogMockData} from '../../mockdata/mockData'; // replace with real data
 import BlogPreview from './BlogPreview';
 
 const BlogFeed = () => {
