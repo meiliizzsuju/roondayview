@@ -2,6 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 
 const foodblogRouter = require("./controllers/foodblogs/foodblogRoutes")
+const userRouter = require("./controllers/users/userRoutes")
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.get("/", (request, response) => {
 })
 
 app.use("/foodblogs", foodblogRouter)
+app.use("/users", userRouter)
 
 app.listen(PORT, () => {
     console.log("Server Started")

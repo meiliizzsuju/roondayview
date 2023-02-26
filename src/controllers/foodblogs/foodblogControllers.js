@@ -27,7 +27,7 @@ async function createFoodblog(foodblog) {
 
 async function deleteFoodblog(foodblogId){
     const deletedFoodblog = await Foodblog.findByIdAndDelete(foodblogId)
-    return deleteFoodblog
+    return deletedFoodblog
 }
 
 
