@@ -4,12 +4,12 @@ import NewBlog from '../blogform/NewBlog';
 import {blogMockData} from '../../mockdata/mockData';
 
 import './blog.css';
-import BlogPreview from './BlogPreview';
+import BlogFeed from './BlogFeed';
 
 export const Blogs = () => {
   const [show, setShow] = useState(false);
-  const container = useRef(null);
   const user = 'user object to be implement' // parsing user object
+  const blogData = blogMockData;
 
   const handleClick = () => {
     setShow(!show);
@@ -27,13 +27,7 @@ export const Blogs = () => {
           ) : null}
         </div>
 
-        <div className='blogpage__feed'>
-            {
-              blogMockData.map((blog,i)=>(
-                <BlogPreview blog={blog} key={blog.id+'-'+i}/>
-              ))
-            }
-        </div>
+        <BlogFeed/>
       </Container>
     </div>
   )

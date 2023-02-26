@@ -2,14 +2,14 @@
     padding: 2rem 1rem;
 }
 
-.blogpage__feed{
+.blogfeed{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 2rem;
 }
 
-.blogpage__feed .blogpreview{
+.blogfeed .blogpreview{
     width: 100%;
 }
 
@@ -20,7 +20,7 @@
         padding: 3rem 2rem;
     }
 
-    .blogpage__feed .blogpreview{
+    .blogfeed .blogpreview{
         width: calc(33.33% - 2rem);
     }
 }
