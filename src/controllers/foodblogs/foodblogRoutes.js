@@ -7,6 +7,8 @@ const { getFoodblogs,
 
 const foodblogRouter = express.Router()
 
+const auth = require("../../middlewares/auth")
+
 // This will get all the foodblogs data
 foodblogRouter.get("/", async (request, response) => {
     // The foodblogs variable will perform the same function as getFoodblogs()
@@ -29,7 +31,7 @@ foodblogRouter.get("/:foodblogId",  async (request, response) => {
     response.json(foodblog)
 })
 
-foodblogRouter.post("/", (request, response) => {
+foodblogRouter.post("/", auth ,(request, response) => {
     const foodblog = createFoodblog({
         title: request.body.title,
         description: request.body.description,

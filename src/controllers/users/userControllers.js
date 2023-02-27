@@ -24,11 +24,36 @@ async function registerUser(user) {
     return token
 }
 
+async function loginUser(user) {
+    // Check if the username exist
+    const existingUser = await User.findOne({username: user.username})
+
+    if(!existingUser) {
+        return {error: "username wrong"}
+    }
+
+    const isMatch = await bcrypt.compare(user.password, existingUser.password)
+    if (!isMatch){
+        return {error: "password wrong"}
+    }
+
+    const payload = {
+        id: existingUser._id
+    }
+
+    const token = jwt.sign(payload, "secret")
+
+    return token
+
+}
+
 async function getUsers() {
     const users = await User.find()
     return users
 }
 
 module.exports = {
-    registerUser
+    registerUser,
+    getUsers,
+    loginUser
 }
