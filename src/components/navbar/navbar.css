@@ -1,0 +1,62 @@
+.navbar.MuiPaper-root{
+    background-color: var(--color-primary);
+}
+
+.navbar__container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.navbar__container .navbar__button{
+    position: absolute;
+    left: 2rem;
+}
+
+.primary-nav ul{
+    list-style: none;
+    padding: 0;
+}
+
+.primary-nav li a{
+    padding: 1rem;
+    display: block;
+    text-decoration: none;
+    margin: 0;
+    color: #000;
+}
+.navbar__container a{
+    color: #000;
+}
+
+.primary-nav li a:hover{
+    text-decoration: underline;
+}
+.navbar__container a:active,
+.navbar__container a:focus,
+.primary-nav li a:active,
+.primary-nav li a:focus{
+    color: #000;
+}
+
+.primary-nav li a.active{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+@media screen and (min-width: 900px) {
+    .navbar__container{
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .primary-nav ul{
+        display: flex;
+    }
+}

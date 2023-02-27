@@ -1,0 +1,28 @@
+.trends{
+    margin: 1rem auto;
+    max-width: 600px;
+}
+
+.trends__box{
+    display: block;
+    width: 100%;
+    background-color: var(--color-primary);
+    border-radius: 25px;
+    padding-bottom: 2rem;
+}
+
+.trends__box h2{
+    text-align: center;
+    padding: 2rem 0 1rem;
+}
+
+.trends__container{
+    display: flex;
+    justify-content: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.trends__container span + span{
+    margin-left: 1rem;
+}

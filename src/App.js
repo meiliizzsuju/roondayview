@@ -1,25 +1,62 @@
 import React from 'react';
-import {Routes, Route} from 'react-router-dom';
-import Admin from './container/admin/Admin';
-import Contact from './container/contact/Contact';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import { NavBar } from './components/navbar/NavBar'
+import { OrderSummary } from './components/OrderSummary';
+import { NoMatch } from './components/NoMatch';
+import { RestaurantStaff } from './components/RestaurantStaff';
+import { FeaturedMenu } from './components/FeaturedMenu';
+import { NewMenu } from './components/NewMenu';
+import { Blogs } from './components/blog/Blogs';
+import { BlogDetails } from './components/blog/BlogDetails';
+import { Reservations } from './components/Reservations';
+import { Users } from './components/Users';
+import { UserDetails } from './components/UserDetails';
+import { Admin } from './components/Admin';
+import { Login } from './components/login/LogIn';
+import { Profile } from './components/profile/Profile'
+import { AuthProvider } from './components/Auth';
+import { RequireAuth } from './components/RequireAuth';
+import StaffUser from './components/staffuser/StaffUser';
+const LazyContact = React.lazy(() => import('./components/contact/Contact'))
 
-import Home from './container/home/Home';
-import Login from './container/login/Login';
-import RestaurantStaff from './container/restaurantStaff/RestaurantStaff';
-import User from './container/user/User';
-
-// functional component
 function App() {
-  
   return (
-    <Routes>
-      <Route path='/*' element={<Home/>}/>
-      <Route path='/login' element={<Login/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-      <Route path='/user' element={<User/>}/>
-      <Route path='/restaurant-staff' element={<RestaurantStaff/>}/>
-      <Route path='/admin' element={<Admin/>}/>
-    </Routes>
+    <AuthProvider>
+      <NavBar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          {/* Lazy Loading for large files, message 'loading...' while about page is being loaded */}
+          <Route path='contact' element={<React.Suspense fallback='Loading...'>
+            <LazyContact />
+          </React.Suspense>}
+           />
+          <Route path='blog' element={<Blogs />}/>
+          <Route path='blog/:blogId' element={<BlogDetails />} /> 
+          <Route path='reservation' element={<Reservations />} />
+          <Route path='order-summary' element={<OrderSummary />} />
+          <Route path='staff-user' element={<StaffUser />} />
+          <Route path='users' element={<Users />}>  
+            <Route path=':userId' element={<UserDetails />} />
+            <Route path='admin' element={<Admin />} />
+          </Route>
+          <Route 
+            path="profile" 
+            element={
+              <RequireAuth>
+                <Profile />
+              </RequireAuth>
+              } 
+          />
+          <Route path='log-in' element={<Login />} />
+          <Route path='staff' element={<RestaurantStaff />}>
+            <Route index element={<FeaturedMenu />} />
+            <Route path='featured' element={<FeaturedMenu/>} />
+            <Route path='new' element={<NewMenu/>} />
+          </Route>
+          <Route path="*" element={<NoMatch/>} />
+        </Routes>
+    </AuthProvider>
   );
 }
 
