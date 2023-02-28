@@ -26,6 +26,10 @@ const FoodblogSchema = new mongoose.Schema({
         required: true,
 
     },
+    dateCreated: {
+        type: Date,
+        default: Date.now
+    },
     reviews: [ReviewSchema],
 })
 

@@ -80,5 +80,6 @@ async function getUsers() {
 module.exports = {
     registerUser,
     getUsers,
-    loginUser
+    loginUser,
+    loginAdmin
 }
