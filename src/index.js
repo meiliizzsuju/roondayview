@@ -1,23 +1,5 @@
-const express = require("express")
 const mongoose = require("mongoose")
-
-const foodblogRouter = require("./controllers/foodblogs/foodblogRoutes")
-const userRouter = require("./controllers/users/userRoutes")
-
-const app = express()
-
-app.use(express.json())
-
-const PORT = 5000
-
-app.get("/", (request, response) => {
-    response.json({
-        data: "Data send"
-    })
-})
-
-app.use("/foodblogs", foodblogRouter)
-app.use("/users", userRouter)
+const { app, PORT } = require("./server")
 
 app.listen(PORT, () => {
     console.log("Server Started")
@@ -26,4 +8,3 @@ app.listen(PORT, () => {
         console.log("Database connected")
     })
 })
-
