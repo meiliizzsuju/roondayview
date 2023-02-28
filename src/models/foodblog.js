@@ -17,10 +17,14 @@ const FoodblogSchema = new mongoose.Schema({
         required: true,
         minLength: 10
     },
-    theme: {
+    price: {
+        type: Number,
+        required: true,
+    },
+    cuisine: {
         type: String,
         required: true,
-        
+
     },
     reviews: [ReviewSchema],
 })
