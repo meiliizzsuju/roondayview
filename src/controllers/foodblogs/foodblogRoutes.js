@@ -35,6 +35,7 @@ foodblogRouter.post("/", auth ,(request, response) => {
     const foodblog = createFoodblog({
         title: request.body.title,
         description: request.body.description,
+        restaurant: request.body.restaurant,
         price: request.body.price,
         cuisine: request.body.cuisine
     })

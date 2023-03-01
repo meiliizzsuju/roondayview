@@ -17,6 +17,11 @@ const FoodblogSchema = new mongoose.Schema({
         required: true,
         minLength: 10
     },
+    restaurant: {
+        type: String,
+        required: true,
+    }
+    ,
     price: {
         type: Number,
         required: true,
