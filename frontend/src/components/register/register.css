@@ -1,0 +1,12 @@
+.register{
+    padding: 4rem 2rem;
+}
+
+.register__form{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+    border: 2px solid var(--color-primary);
+}

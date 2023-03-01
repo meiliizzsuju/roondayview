@@ -24,6 +24,9 @@ export const Login = () => {
           <div className='login__form'>
             <input type='text' onChange={(e) => setUser(e.target.value)} placeholder='Username'></input>
             <button onClick={handleLogin} className="btn btn-form">Login</button>
+            <a href="/register">
+              Create new account
+            </a>
           </div>
         </div>
       </Container>
