@@ -77,6 +77,15 @@ async function getUsers() {
     return users
 }
 
+async function getUserByID(userId){
+    try{
+        const user = await User.find(userId)
+        return user
+    }catch(err){
+        console.log(err)
+    }
+}
+
 module.exports = {
     registerUser,
     getUsers,

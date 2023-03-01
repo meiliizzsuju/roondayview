@@ -3,7 +3,8 @@ const express = require("express")
 const { registerUser,
         getUsers,
         loginUser,
-        loginAdmin } = require("./userControllers")
+        loginAdmin,
+        getUserByID } = require("./userControllers")
 
 const userRouter = express.Router()
 
@@ -24,6 +25,11 @@ userRouter.post("/register", async (request, response) => {
 userRouter.get("/", async (request, response) => {
     const users = await getUsers()
     return response.json(users)
+})
+
+userRouter.delete("/:userId", async (request, response) => {
+    const user = await getUserByID(request.params.userId)
+    response.json(user)
 })
 
 userRouter.post("/login", async(request, response) => {
