@@ -88,7 +88,7 @@ export const NavBar = () => {
 
   return (
     <AppBar position="static" className='navbar'>
-      <Container maxWidth="lg" disableGutters="true">
+      <Container maxWidth="lg" >
         <div className='navbar__container'>
             <NavLink style={navLinkStyles} to='/' >
                 Home
@@ -128,8 +128,8 @@ export const NavBar = () => {
                     backgroundColor: "#fff"
                 }}
                 >
-                <IconButton sx={{ mb: 2 }}>
-                    <CloseIcon onClick={toggleDrawer(false)} />
+                <IconButton sx={{ mb: 2 }} onClick={toggleDrawer(false)}>
+                    <CloseIcon />
                 </IconButton>
 
                 <Box sx={{ mb: 2 }}>
