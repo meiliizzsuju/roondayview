@@ -77,13 +77,9 @@ async function getUsers() {
     return users
 }
 
-async function getUserByID(userId){
-    try{
-        const user = await User.find(userId)
-        return user
-    }catch(err){
-        console.log(err)
-    }
+async function deleteUser(userId){
+    const deleteUser = await User.findByIdAndDelete(userId)
+    return deleteUser
 }
 
 module.exports = {

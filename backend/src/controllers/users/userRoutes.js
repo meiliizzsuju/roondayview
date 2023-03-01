@@ -4,7 +4,7 @@ const { registerUser,
         getUsers,
         loginUser,
         loginAdmin,
-        getUserByID } = require("./userControllers")
+        deleteUser } = require("./userControllers")
 
 const userRouter = express.Router()
 
@@ -28,7 +28,7 @@ userRouter.get("/", async (request, response) => {
 })
 
 userRouter.delete("/:userId", async (request, response) => {
-    const user = await getUserByID(request.params.userId)
+    const user = await deleteUser(request.params.userId)
     response.json(user)
 })
 
