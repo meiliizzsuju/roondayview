@@ -20,7 +20,7 @@ foodblogRouter.get("/", async (request, response) => {
 // This will get a specific foodblog data
 foodblogRouter.get("/:foodblogId",  async (request, response) => {
     // The variable foodblog will perform the same function getFoodblogByID().
-    const foodblog = getFoodblogByID(request.params.foodblogId)
+    const foodblog = await getFoodblogByID(request.params.foodblogId)
     // If there isn't a foodblog that has the specific id, return an error message
     if(!foodblog){
         response.status(404).json({

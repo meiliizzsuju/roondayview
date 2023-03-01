@@ -77,6 +77,11 @@ async function getUsers() {
     return users
 }
 
+async function deleteUser(userId){
+    const deleteUser = await User.findByIdAndDelete(userId)
+    return deleteUser
+}
+
 module.exports = {
     registerUser,
     getUsers,
