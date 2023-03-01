@@ -15,7 +15,7 @@ userRouter.post("/register", async (request, response) => {
     })
 
     if (token.error) {
-       return response.staus(400).json({ data: token.error})
+       return response.status(400).json({ data: token.error})
     }
 
     return response.json(token)
