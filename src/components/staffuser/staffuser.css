@@ -1,0 +1,46 @@
+
+
+.staffuser__box input,
+.staffuser__box textarea{
+    width: calc(100% - 2rem);
+    border-radius: 0;
+    border: 1px solid;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    transition: all 150ms ease-in-out;
+}
+
+.staffuser__box input{
+    border-radius: 50px;
+}
+
+
+.staffuser__box--bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.staffuser__box--bottom button + button {
+    margin-left: 2rem;
+}
+
+.staffuser__box .form-control--select{
+    margin: 2rem 0 3rem;
+}
+
+.staffuser__box .form-control--select #updateitem__avail{
+    font-size: 1.25rem;
+}
+
+.staffuser__box .form-control--select label{
+    margin-right: 2rem;
+}
+
+@media screen and (min-width: 900px) {
+    .staffuser .MuiTabs-flexContainer button{
+        font-size: 1rem;
+        padding: 2rem;
+    }
+}

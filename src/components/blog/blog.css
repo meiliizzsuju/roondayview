@@ -1,0 +1,26 @@
+.blogpage{
+    padding: 2rem 1rem;
+}
+
+.blogfeed{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.blogfeed .blogpreview{
+    width: 100%;
+}
+
+
+
+@media screen and (min-width: 900px) {
+    .blogpage{
+        padding: 3rem 2rem;
+    }
+
+    .blogfeed .blogpreview{
+        width: calc(33.33% - 2rem);
+    }
+}
