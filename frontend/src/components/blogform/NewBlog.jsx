@@ -6,8 +6,6 @@ import axios from "axios";
 
 import './newblog.css'
 
-const inputErrorState = ` error-field`;
-
 
 const NewBlog = ({user}) => {
     const [blogFields, setBlogFields] = useState(false);
