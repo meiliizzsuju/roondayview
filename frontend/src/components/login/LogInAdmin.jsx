@@ -31,7 +31,8 @@ const LogInAdmin = () => {
               setUsername('')
               setPassword('')
 
-              localStorage.setItem('auth-token',response.data.token)
+              localStorage.setItem('auth-token',response.data.token);
+              localStorage.setItem('user','admin');
               auth.login(username)
               navigate(redirectPath, { replace: true } )
           }

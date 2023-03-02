@@ -17,7 +17,7 @@ const BlogFeed = () => {
         <div className='blogfeed'>
             {
               blogs?.map((blog,i)=>(
-                <BlogPreview blog={blog} key={blog.id}/>
+                <BlogPreview blog={blog} key={i}/>
               ))
             }
         </div>

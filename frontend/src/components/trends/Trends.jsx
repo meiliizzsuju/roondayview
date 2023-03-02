@@ -15,7 +15,7 @@ const Trends = () => {
         <div className='trends__container'>
           {trendData?.length ? (
             trendData.map((item,i) => (
-              <span><a href={'/blog/'+item.slug} className='trends__item' key={item.name+i}>{item.name}</a></span>
+              <span key={item+i}><a href={'/blog/'+item.slug} className='trends__item' key={item.name+i}>{item.name}</a></span>
             ))
           ) : 'Trending not found'}
         </div>
