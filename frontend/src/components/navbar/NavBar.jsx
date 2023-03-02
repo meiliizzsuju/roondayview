@@ -51,7 +51,7 @@ const Menu = (navLinkStyles) =>{
                 </li>
                 {!auth.user  && (
                     <li>
-                        <NavLink style={navLinkStyles} to='/log-in'>
+                        <NavLink style={navLinkStyles} to='/login'>
                         Login
                         </NavLink>  
                     </li>

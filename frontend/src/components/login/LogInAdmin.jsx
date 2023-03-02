@@ -9,7 +9,7 @@ import axios from "axios";
 
 import './login.css';
 
-export const Login = () => {
+const LogInAdmin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [submit, setSubmit] = useState(false);
@@ -17,15 +17,14 @@ export const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const redirectPath = location.state?.path || '/'
+  const redirectPath = location.state?.path || '/users/Admin'
  
   const handleLogin = () => {
-      axios.post('http://localhost:5000/users/login', {
+      axios.post('http://localhost:5000/users/admin/login', {
           username: username,
           password: password
       })
       .then(function (response) {
-          // console.log(response)
           if(response.status === 200){
               alert('Login completed');
               setSubmit(false) 
@@ -53,7 +52,7 @@ export const Login = () => {
               <Box
                   component="form"
                   sx={{
-                      '& > :not(style)': { m: 2, width: '25ch' },
+                      '& > :not(style)': { m: 1, width: '25ch' },
                   }}
 
                   autoComplete="off"
@@ -82,18 +81,12 @@ export const Login = () => {
                     error={submit===true&&password === ''}
                 />
               </Box>
-            <button onClick={handleLogin} className="btn btn-form">Login</button>
-            <div className='login__bottom'>
-              <a href="/register">
-                Create new account
-              </a>
-              <a href="/login-admin">
-                Are you an admin?
-              </a>
-            </div>
+            <button onClick={handleLogin} className="btn btn-form">Admin Login</button>
           </div>
         </div>
       </Container>
     </div>
   )
 }
+
+export default LogInAdmin
