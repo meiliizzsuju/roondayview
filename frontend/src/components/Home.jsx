@@ -11,7 +11,7 @@ const Home = () => {
       <Container>
         <SearchBar/>
         <Trends/>
-        <BlogFeed/>
+        <BlogFeed key="homefeed"/>
       </Container>
     </div>
   )

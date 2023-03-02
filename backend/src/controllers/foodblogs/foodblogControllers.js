@@ -9,7 +9,7 @@ async function getFoodblogs () {
 // Get a specific food blog in the database based on the ID
 async function getFoodblogByID (foodblogId) {
     try{
-        const foodblog = await Foodblog.find[foodblogId]
+        const foodblog = await Foodblog.findById(foodblogId)
         return foodblog
     } catch(err){
         // Catch error and return them to the console

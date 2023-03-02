@@ -25,7 +25,7 @@ export const Blogs = () => {
           ) : null}
         </div>
 
-        <BlogFeed/>
+        <BlogFeed key="blogfeed"/>
       </Container>
     </div>
   )
