@@ -71,8 +71,6 @@ export const NavBar = () => {
         }
     }
 
-    console.log(open)
-
     const toggleDrawer = (open) => (event) => {
         if (
           event.type === "keydown" &&
