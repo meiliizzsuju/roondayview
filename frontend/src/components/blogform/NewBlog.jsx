@@ -6,8 +6,6 @@ import axios from "axios";
 
 import './newblog.css'
 
-const inputErrorState = ` error-field`;
-
 
 const NewBlog = ({user}) => {
     const [blogFields, setBlogFields] = useState(false);
@@ -62,7 +60,7 @@ const NewBlog = ({user}) => {
                 'http://localhost:5000/foodblogs',
                 {
                     title: b_dishName,
-                    description: b_dishName,
+                    description: b_desc,
                     restaurant: b_restaurants[0],
                     price: b_price,
                     cuisine: b_type

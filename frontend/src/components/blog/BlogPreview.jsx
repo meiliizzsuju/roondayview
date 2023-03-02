@@ -4,7 +4,9 @@ import './blogpreview.css';
 const defaultImg = 'https://picsum.photos/640/360'
 
 const BlogPreview = ({blog}) => {
-    const blogdetailpath = '/blog/'+blog.id;
+    const blogdetailpath = '/blog/'+blog._id;
+    const title = blog.title;
+    const img = blog.img;
 
     const checkImg = (blogImg) =>{
         if(!blogImg || blogImg === ''){
@@ -18,9 +20,9 @@ const BlogPreview = ({blog}) => {
     <div className='blogpreview'>
         <a href={blogdetailpath}>
             <div className='blogpreview__container'>
-                <img src={checkImg(blog.img)} alt={blog.name} />
+                <img src={checkImg(img)} alt={title} />
                 <div className='blogpreview__text'>
-                    <p><b>{blog.name}</b></p>
+                    <p><b>{title}</b></p>
                 </div>
             </div>
         </a>
