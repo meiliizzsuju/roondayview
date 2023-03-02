@@ -19,6 +19,7 @@ import { AuthProvider } from './components/Auth';
 import { RequireAuth } from './components/RequireAuth';
 import StaffUser from './components/staffuser/StaffUser';
 import Register from './components/register/Register';
+import LogInAdmin from './components/login/LogInAdmin';
 const LazyContact = React.lazy(() => import('./components/contact/Contact'))
 
 function App() {
@@ -49,7 +50,8 @@ function App() {
               </RequireAuth>
               } 
           />
-          <Route path='log-in' element={<Login />} />
+          <Route path='login' element={<Login />} />
+          <Route path='login-admin' element={<LogInAdmin />} />
           <Route path='register' element={<Register />} />
           <Route path='staff' element={<RestaurantStaff />}>
             <Route index element={<FeaturedMenu />} />
