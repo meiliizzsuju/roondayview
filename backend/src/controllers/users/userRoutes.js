@@ -45,8 +45,8 @@ userRouter.post("/login", async(request, response) => {
 
 userRouter.post("/admin/login", async (request, response) => {
     const token = await loginAdmin({
-        username: request.body.request,
-        password: request.body.request
+        username: request.body.username,
+        password: request.body.password
     })
     return response.json({token})
 })
