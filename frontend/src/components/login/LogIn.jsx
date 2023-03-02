@@ -25,13 +25,14 @@ export const Login = () => {
           password: password
       })
       .then(function (response) {
-          console.log(response)
+          // console.log(response)
           if(response.status === 200){
               alert('Login completed');
               setSubmit(false) 
               setUsername('')
               setPassword('')
 
+              localStorage.setItem('auth-token',response.data.token)
               auth.login(username)
               navigate(redirectPath, { replace: true } )
           }
