@@ -32,7 +32,7 @@ const Register = () => {
                 setUsername('')
                 setPassword('')
 
-                navigate('/log-in')
+                navigate('/login')
             }
         })
         .catch(function (error) {
