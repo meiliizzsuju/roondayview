@@ -28,7 +28,7 @@ import { AdminMessages } from './components/admin/AdminMessages';
 const LazyContact = React.lazy(() => import('./components/contact/Contact'))
 
 axios.defaults.baseURL = 'http://localhost:5000';
-
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const theme = createTheme({
   palette: {

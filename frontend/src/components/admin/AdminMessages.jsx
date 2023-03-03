@@ -24,10 +24,10 @@ export const AdminMessages = () => {
   
   
     useEffect(()=>{
-      axios.get(`/contact`,{headers: { Authorization: `Bearer ${token}` }}).then((response) => {
-        setMessages(response.data);
-        setGetMessage(true);
-      });
+        axios.get(`/contact`,{headers: { Authorization: `Bearer ${token}` }}).then((response) => {
+            setMessages(response.data);
+            setGetMessage(true);
+        });
     },[getMessage]);
 
     return (
