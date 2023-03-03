@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../Auth'
 import AppBar from "@mui/material/AppBar";
-//import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
@@ -40,7 +39,7 @@ const Menu = (navLinkStyles) =>{
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink style={navLinkStyles} to='/users/Admin'>
+                    <NavLink style={navLinkStyles} to='/admin'>
                         Admin
                     </NavLink>
                 </li>
@@ -51,7 +50,7 @@ const Menu = (navLinkStyles) =>{
                 </li>
                 {!auth.user  && (
                     <li>
-                        <NavLink style={navLinkStyles} to='/log-in'>
+                        <NavLink style={navLinkStyles} to='/login'>
                         Login
                         </NavLink>  
                     </li>
@@ -71,8 +70,6 @@ export const NavBar = () => {
             textDecoration: isActive ? 'none' : 'underline',
         }
     }
-
-    console.log(open)
 
     const toggleDrawer = (open) => (event) => {
         if (

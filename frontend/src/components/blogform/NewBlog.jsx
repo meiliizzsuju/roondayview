@@ -1,20 +1,27 @@
-import { MenuItem, OutlinedInput, Select } from '@mui/material';
+import { Box, FormControl, InputAdornment, InputLabel, MenuItem, OutlinedInput, Select, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import {restaurantMockData} from '../../mockdata/mockData.js';
 
-import './newblog.css'
+import axios from "axios";
 
-const inputErrorState = ` error-field`;
+import './newblog.css'
 
 
 const NewBlog = ({user}) => {
-    const [blogFields, seBlogFields] = useState(false);
+    const [blogFields, setBlogFields] = useState(false);
     const [b_dishName, setB_dishName] = useState('');
+    const [b_dishNameValid, setB_dishNameValid] = useState(false);
     const [b_price, setB_price] = useState('');
     const [b_restaurants, setB_restaurants] = useState('');
     const [b_desc, setB_desc] = useState('');
+    const [b_descValid, setB_descValid] = useState(false);
     const [b_type, setB_type] = useState('');
 
+    const [focused, setFocused] = React.useState(false)
+    const onFocus = () => setFocused(true)
+    const onBlur = () => setFocused(false)
+
+    const token = localStorage.getItem('auth-token');
     const restaurant_rest = restaurantMockData;
 
     const handleChange = (event) => {
@@ -27,29 +34,66 @@ const NewBlog = ({user}) => {
         );
     };
 
-    const creatNewBlog = () =>{
-        if(b_dishName,b_price,b_restaurants,b_desc,b_desc){
-            // to be added to BE with staffId
-            console.log(b_dishName,b_price,b_restaurants,b_desc,b_desc)
-
-            alert('New blog has been added');
-            setB_dishName('')
-            setB_price('')
-            setB_restaurants('')
-            setB_desc('')
-            setB_type('')
-        } else{
-            seBlogFields(true);
-
-            setTimeout(
-              () => {
-                seBlogFields(false); // clear after 2 sec
-              },
-              5000,
-            );  
+    const titleValidate = (val) =>{
+        setB_dishName(val)
+        if(b_dishName.length >= 8){
+            setB_dishNameValid(true)
+        }else{
+            setB_dishNameValid(false)
         }
     }
 
+    const descValidate = (val) =>{
+        setB_desc(val)
+        if(b_desc.length >= 10){
+            setB_descValid(true)
+        }else{
+            setB_descValid(false)
+        }
+    }
+
+    const creatNewBlog = () => {
+        setBlogFields(true);
+        if(b_dishNameValid && b_descValid){
+            // POST
+            axios.post( 
+                'http://localhost:5000/foodblogs',
+                {
+                    title: b_dishName,
+                    description: b_desc,
+                    restaurant: b_restaurants[0],
+                    price: b_price,
+                    cuisine: b_type
+                },
+                {headers: { Authorization: `Bearer ${token}` }}
+                ).then(function (response){
+                    if(response.status === 200){
+                        alert('New blog has been added');
+                        setB_dishName('')
+                        setB_price('')
+                        setB_restaurants('')
+                        setB_desc('')
+                        setB_type('')
+
+                        setBlogFields(false);
+                    }
+                }).catch(function (error){
+                    switch (error.response.status) {
+                        case 400:
+                            alert(error.response.data['data'])
+                            break;
+                        case 401:
+                            alert(error.response.data['data'])
+                            break;
+                        default:
+                            break;
+                    }
+                });
+
+        } else{
+            console.log("fill the form");
+        }
+    }
 
     const clearBlogFields = () => {
         setB_dishName('')
@@ -62,104 +106,113 @@ const NewBlog = ({user}) => {
 
     return (
         <div className='blogform'>
-            <div className='form-control relative'>
-                <label htmlFor="restaurantdetails_tags">New Blog</label>
-                <input type="text" name="restaurantdetails_tags" placeholder='Add Dish '
-                    value={b_dishName}
-                    onChange={(e)=> setB_dishName(e.target.value)}
-                    className={(blogFields&&b_dishName === '') ? (inputErrorState) : ('')}
-                />
-                {(blogFields&&b_dishName === '') &&(
-                <span className='error-message'>Please provide 'name'</span>
-                )}
-            </div>
+            <Box
+                component="form"
+                sx={{
+                    '& > :not(style)': { m: 1, width: '100%' },
+                }}
+                noValidate
+                autoComplete="off"
+            >
+                <FormControl fullWidth>
+                    <TextField required
+                        id="b_dishName"
+                        type="text" name="restaurantdetails_tags" label='Add Dish'
+                        value={b_dishName}
+                        onFocus={onFocus} onBlur={onBlur}
+                        onChange={(e)=> titleValidate(e.target.value)}
+                        error={(blogFields===true&&b_dishName === '') || (focused===true&&b_dishName.length < 8)}
+                        helperText="Minimum 8 characters"
+                    />
+                </FormControl>
 
-            <div className='form-control relative'>
-                <label htmlFor="restaurantdetails_tags">Restaurant</label>
-                <Select
-                    name="restaurantdetails_tags"
-                    displayEmpty
-                    value={b_restaurants}
-                    onChange={handleChange}
-                    input={<OutlinedInput />}
-                    renderValue={(selected) => {
-                        if (selected.length === 0) {
-                        return <em>Select restaurant from the list</em>;
-                        }
+                <FormControl fullWidth>
+                    <Select
+                        required
+                        name="restaurantdetails_tags"
+                        displayEmpty
+                        value={b_restaurants}
+                        onChange={handleChange}
+                        input={<OutlinedInput />}
+                        renderValue={(selected) => {
+                            if (selected.length === 0) {
+                            return <em>Select restaurant from the list</em>;
+                            }
 
-                        return selected.join(', ');
-                    }}
-                    inputProps={{ 'aria-label': 'Without label' }}
-                >
-                <MenuItem disabled value="">
-                    <em>Select restaurant from the list</em>
-                </MenuItem>
-                {restaurant_rest.map((item) => (
-                    <MenuItem
-                        key={item.id}
-                        value={item.name}
+                            return selected.join(', ');
+                        }}
+                        inputprops={{ 'aria-label': 'Without label' }}
                     >
-                    {item.name}
+                    <MenuItem disabled value="">
+                        <em>Select restaurant from the list</em>
                     </MenuItem>
-                ))}
-                </Select>
-                {(blogFields&&b_restaurants === '') &&(
-                <span className='error-message'>Please provide 'price'</span>
-                )}
-            </div>
+                    {restaurant_rest.map((item) => (
+                        <MenuItem
+                            key={item.id}
+                            value={item.name}
+                        >
+                        {item.name}
+                        </MenuItem>
+                    ))}
+                    </Select>
+                </FormControl>
 
-            <div className='form-control relative'>
-                <label htmlFor="restaurantdetails_tags">Price</label>
-                <input type="text" name="restaurantdetails_tags" placeholder='Input Dollar Amount'
-                    value={b_price}
-                    onChange={(e)=> setB_price(e.target.value)}
-                    className={(blogFields&&b_price === '') ? (inputErrorState) : ('')}
-                />
-                {(blogFields&&b_price === '') &&(
-                <span className='error-message'>Please provide 'price'</span>
-                )}
-            </div>
+                <FormControl fullWidth>
+                    <InputLabel htmlFor="amount">Amount</InputLabel>
+                    <OutlinedInput required
+                        id="b_price"
+                        type="number" name="b_price" label='Amount'
+                        inputprops={{
+                            inputProps: { 
+                                max: 100000, min: 0 
+                            }
+                        }}
+                        startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                        value={b_price}
+                        onChange={(e)=> setB_price(e.target.value)}
+                        error={(blogFields===true&&b_price === '')}
+                    />
+                </FormControl>
 
-            <div className='form-control relative'>
-                <label htmlFor="b_desc">Description</label>
-                <textarea type="text" name="b_desc" placeholder='Provide description'
-                    value={b_desc}
-                    onChange={(e)=> setB_desc(e.target.value)}
-                    className={(blogFields&&b_desc === '') ? (inputErrorState) : ('')}
-                />
-                {(blogFields&&b_desc === '') &&(
-                <span className='error-message'>Please provide 'message'</span>
-                )}
-            </div>
+                <FormControl fullWidth>
+                    <TextField required
+                        id="b_desc"
+                        type="text" name="b_desc" label='Description'
+                        multiline rows={4}
+                        value={b_desc}
+                        onChange={(e)=> descValidate(e.target.value)}
+                        error={(blogFields===true&&b_desc === '') || (focused===true&&b_desc.length < 10)}
+                        helperText="Minimum 10 characters"
+                    />
+                </FormControl>
+                
+                <FormControl fullWidth>
+                    <TextField required
+                        type="text" name="b_type" label='Provide Cousine type eg. Japanese Thai'
+                        value={b_type}
+                        onChange={(e)=> setB_type(e.target.value)}
+                        error={(blogFields===true&&b_type === '')}
+                    />
+                </FormControl>
 
-            <div className='form-control relative'>
-                <label htmlFor="b_type">Cousine</label>
-                <textarea type="text" name="b_type" placeholder='Provide Cousine type'
-                    value={b_type}
-                    onChange={(e)=> setB_type(e.target.value)}
-                    className={(blogFields&&b_type === '') ? (inputErrorState) : ('')}
-                />
-                {(blogFields&&b_type === '') &&(
-                <span className='error-message'>Please provide 'cousine'</span>
-                )}
-            </div>
+                <div className='staffuser__box--bottom'>
+                    <button
+                        type="button"
+                        onClick={clearBlogFields}
+                        className="btn btn-form"
+                    >
+                        Discard
+                    </button>
+                    <button
+                        type="button"
+                        onClick={creatNewBlog}
+                        className="btn btn-form"
+                    >
+                        Post
+                    </button>
+                </div>
+            </Box>
 
-            <div className='staffuser__box--bottom'>
-                <button
-                    type="button"
-                    onClick={clearBlogFields}
-                    className="btn btn-form"
-                >
-                    Discard
-                </button>
-                <button
-                    type="button"
-                    onClick={creatNewBlog}
-                    className="btn btn-form"
-                >
-                    Post
-                </button>
-            </div>
         </div>
     )
 }

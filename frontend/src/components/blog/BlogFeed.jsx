@@ -1,15 +1,23 @@
 import React from 'react';
-import {blogMockData} from '../../mockdata/mockData'; // replace with real data
+import { useEffect } from 'react';
 import BlogPreview from './BlogPreview';
+import axios from "axios";
+import { useState } from 'react';
 
 const BlogFeed = () => {
-    const blogData = blogMockData;
+    const [ blogs , setBlogs] = useState(null);
+
+    useEffect(()=>{
+      axios.get('http://localhost:5000/foodblogs').then((response) => {
+        setBlogs(response.data);
+      });
+    },[])
 
     return (
         <div className='blogfeed'>
             {
-              blogData.map((blog,i)=>(
-                <BlogPreview blog={blog} key={blog.id+'-'+i}/>
+              blogs?.map((blog,i)=>(
+                <BlogPreview blog={blog} key={i}/>
               ))
             }
         </div>
