@@ -3,9 +3,19 @@ import { Box, Container } from '@mui/system';
 import { Outlet } from 'react-router-dom';
 
 import '../../components/css/admin.css'
+import { Button } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import PersonIcon from '@mui/icons-material/Person';
+import ArticleIcon from '@mui/icons-material/Article';
+import EmailIcon from '@mui/icons-material/Email';
 
 
 export const Admin = () => {
+  const classes = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1),
+    },
+  }));
   
   return (
     <div className='adminuser'>
@@ -13,15 +23,39 @@ export const Admin = () => {
         <Box sx={{ my: 5 }}>
           <h1>Admin</h1>
           <div className='admin__nav'>
-            <a href="/admin/users" className='btn'>
-              Manage Users
-            </a>
-            <a href="/admin/blogs" className='btn'>
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+              startIcon={<PersonIcon />}
+              href="/admin/users"
+              size="large"
+              sx={{ mr: 2}}
+            >
+              Manage User
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+              startIcon={<ArticleIcon />}
+              href="/admin/blogs"
+              size="large"
+              sx={{ mr: 2}}
+            >
               Manage Blogs
-            </a>
-            <a href="/admin/blogs" className='btn'>
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+              startIcon={<EmailIcon />}
+              href="/admin/messages"
+              size="large"
+              sx={{ mr: 2}}
+            >
               Messages
-            </a>
+            </Button>
           </div>
           <Outlet/>
         </Box>
