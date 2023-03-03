@@ -17,7 +17,7 @@ const LogInAdmin = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const redirectPath = location.state?.path || '/users/Admin'
+  const redirectPath = location.state?.path || '/admin'
  
   const handleLogin = () => {
       axios.post('http://localhost:5000/users/admin/login', {
