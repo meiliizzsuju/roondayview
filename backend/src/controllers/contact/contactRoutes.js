@@ -23,3 +23,5 @@ contactRouter.get("/", admin, async (request, response) => {
     const contactPost = await getContactPost()
     response.json(contactPost)
 })
+
+module.exports = contactRouter

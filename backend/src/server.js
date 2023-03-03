@@ -4,6 +4,7 @@ const cors = require("cors")
 
 const foodblogRouter = require("./controllers/foodblogs/foodblogRoutes")
 const userRouter = require("./controllers/users/userRoutes")
+const contactRouter = require("./controllers/contact/contactRoutes")
 
 const app = express()
 
@@ -26,6 +27,7 @@ app.use(cors(corsOption))
 
 app.use("/foodblogs", foodblogRouter)
 app.use("/users", userRouter)
+app.use("/contact", contactRouter)
 
 module.exports = {
     app,
