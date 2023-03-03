@@ -19,6 +19,7 @@ import { Login } from './components/login/LogIn';
 import { Profile } from './components/profile/Profile'
 import { AuthProvider } from './components/Auth';
 import { RequireAuth } from './components/RequireAuth';
+import { RequireAuthAdmin } from './components/RequireAuthAdmin';
 import StaffUser from './components/staffuser/StaffUser';
 import Register from './components/register/Register';
 import LogInAdmin from './components/login/LogInAdmin';
@@ -64,7 +65,13 @@ function App() {
             <Route path='reservation' element={<Reservations />} />
             <Route path='order-summary' element={<OrderSummary />} />
             <Route path='staff-user' element={<StaffUser />} />
-            <Route path='admin' element={<Admin />} >
+            
+            <Route path='admin' element={
+              <RequireAuthAdmin>
+                <Admin />
+              </RequireAuthAdmin>
+            } 
+            >
               <Route path='users' element={<AdminUsers />} />
               <Route path='blogs' element={<AdminBlogs />} />
               <Route path='messages' element={<AdminMessages/>} />
