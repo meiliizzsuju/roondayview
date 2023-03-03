@@ -42,7 +42,7 @@ const StaffUser = () => {
 
 
     const addNewItem = () =>{
-        if(additem_name,additem_price,additem_desc,additem_type){
+        if(additem_name && additem_price && additem_desc && additem_type){
             // to be added to BE with staffId
             console.log(additem_name,additem_price,additem_desc,additem_type)
 
@@ -64,7 +64,7 @@ const StaffUser = () => {
     }
 
     const UpdateItem = () =>{
-        if(updateitem_search,updateitem_price,updateitem_avail,updateitem_desc,updateitem_type){
+        if(updateitem_search && updateitem_price && updateitem_avail && updateitem_desc && updateitem_type){
             // to be added to BE with staffId
             console.log(updateitem_search,updateitem_price,updateitem_avail,updateitem_desc,updateitem_type)
 
@@ -87,7 +87,7 @@ const StaffUser = () => {
     }
 
     const UpdateResDetail = () =>{
-        if(restaurantDetail_hours,restaurantDetail_hours.restaurantDetail_mesg,restaurantDetail_desc,restaurantDetail_address){
+        if(restaurantDetail_hours && restaurantDetail_hours.restaurantDetail_mesg && restaurantDetail_desc && restaurantDetail_address){
             // to be added to BE with staffId
             console.log(restaurantDetail_hours,restaurantDetail_hours.restaurantDetail_mesg,restaurantDetail_desc,restaurantDetail_address)
 
