@@ -36,16 +36,17 @@ export const AdminMessages = () => {
         <div className='adminMessage__box'>
             <Box>
                 {
-                    messages && 
-                    <Masonry columns={{ xs: 2, sm: 3, md: 4 }} spacing={2}>
-                        {messages?.map((item) => (
-                            <Item key={item._id} elevation={6}>
-                                {item.message}
-                                <Divider sx={{marginBottom:1,marginTop:3}}/>
-                                <b>{item.name}</b>
-                            </Item>
-                        ))}
-                    </Masonry>
+                    messages ? (
+                        <Masonry columns={{ xs: 2, sm: 3, md: 4 }} spacing={2}>
+                            {messages?.map((item) => (
+                                <Item key={item._id} elevation={6}>
+                                    {item.message}
+                                    <Divider sx={{marginBottom:1,marginTop:3}}/>
+                                    <b>{item.name}</b>
+                                </Item>
+                            ))}
+                        </Masonry>
+                    ) : ('Privilege content')
                 }
             </Box>
         </div>
