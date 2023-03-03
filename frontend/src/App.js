@@ -12,7 +12,7 @@ import { BlogDetails } from './components/blog/BlogDetails';
 import { Reservations } from './components/Reservations';
 import { Users } from './components/Users';
 import { UserDetails } from './components/UserDetails';
-import { Admin } from './components/Admin';
+import { Admin } from './components/admin/Admin';
 import { Login } from './components/login/LogIn';
 import { Profile } from './components/profile/Profile'
 import { AuthProvider } from './components/Auth';
@@ -20,6 +20,7 @@ import { RequireAuth } from './components/RequireAuth';
 import StaffUser from './components/staffuser/StaffUser';
 import Register from './components/register/Register';
 import LogInAdmin from './components/login/LogInAdmin';
+import { AdminUsers}  from './components/admin/AdminUsers';
 const LazyContact = React.lazy(() => import('./components/contact/Contact'))
 
 function App() {
@@ -38,9 +39,11 @@ function App() {
           <Route path='reservation' element={<Reservations />} />
           <Route path='order-summary' element={<OrderSummary />} />
           <Route path='staff-user' element={<StaffUser />} />
+          <Route path='admin' element={<Admin />} >
+            <Route path='users' element={<AdminUsers />} />
+          </Route>
           <Route path='users' element={<Users />}>  
             <Route path=':userId' element={<UserDetails />} />
-            <Route path='admin' element={<Admin />} />
           </Route>
           <Route 
             path="profile" 

@@ -39,7 +39,7 @@ const Menu = (navLinkStyles) =>{
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink style={navLinkStyles} to='/users/Admin'>
+                    <NavLink style={navLinkStyles} to='/admin'>
                         Admin
                     </NavLink>
                 </li>
