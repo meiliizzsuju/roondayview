@@ -3,7 +3,6 @@ import parse from 'autosuggest-highlight/parse';
 import match from 'autosuggest-highlight/match';
 import axios from "axios";
 
-import '../../components/css/admin.css'
 import { Autocomplete, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, TextField } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 

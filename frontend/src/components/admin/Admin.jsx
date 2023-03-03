@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Container } from '@mui/system';
 import { Outlet } from 'react-router-dom';
 
-import '../../components/css/admin.css'
 import { Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import PersonIcon from '@mui/icons-material/Person';
