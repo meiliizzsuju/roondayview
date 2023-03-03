@@ -14,7 +14,7 @@ const ContactForm = ({title}) => {
     const submitMessage = () =>{
         if(message && name){
             // POST
-            axios.post(`http://localhost:5000/contact`,{
+            axios.post(`/contact`,{
                 name: name,
                 message: message
             },

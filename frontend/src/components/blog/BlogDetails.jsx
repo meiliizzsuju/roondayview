@@ -27,7 +27,7 @@ export const BlogDetails = () => {
 
 
   useEffect(()=>{
-    axios.get(`http://localhost:5000/foodblogs/${blogId}`).then((response) => {
+    axios.get(`/foodblogs/${blogId}`).then((response) => {
       setBlog(response.data);
     });
   })

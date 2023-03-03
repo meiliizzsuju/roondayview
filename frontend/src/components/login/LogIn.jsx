@@ -20,7 +20,7 @@ export const Login = () => {
   const redirectPath = location.state?.path || '/'
  
   const handleLogin = () => {
-      axios.post('http://localhost:5000/users/login', {
+      axios.post('/users/login', {
           username: username,
           password: password
       })

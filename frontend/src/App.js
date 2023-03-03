@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import axios from 'axios';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Home from './components/Home';
 import { NavBar } from './components/navbar/NavBar'
@@ -25,6 +26,8 @@ import { AdminUsers}  from './components/admin/AdminUsers';
 import { AdminBlogs } from './components/admin/AdminBlogs';
 import { AdminMessages } from './components/admin/AdminMessages';
 const LazyContact = React.lazy(() => import('./components/contact/Contact'))
+
+axios.defaults.baseURL = 'http://localhost:5000';
 
 
 const theme = createTheme({

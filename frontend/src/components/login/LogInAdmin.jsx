@@ -20,7 +20,7 @@ const LogInAdmin = () => {
   const redirectPath = location.state?.path || '/admin'
  
   const handleLogin = () => {
-      axios.post('http://localhost:5000/users/admin/login', {
+      axios.post(`/users/admin/login`, {
           username: username,
           password: password
       })

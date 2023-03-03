@@ -24,7 +24,7 @@ export const AdminMessages = () => {
   
   
     useEffect(()=>{
-      axios.get(`http://localhost:5000/contact`,{headers: { Authorization: `Bearer ${token}` }}).then((response) => {
+      axios.get(`/contact`,{headers: { Authorization: `Bearer ${token}` }}).then((response) => {
         setMessages(response.data);
         setGetMessage(true);
       });
