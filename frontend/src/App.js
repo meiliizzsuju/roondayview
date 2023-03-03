@@ -22,6 +22,7 @@ import StaffUser from './components/staffuser/StaffUser';
 import Register from './components/register/Register';
 import LogInAdmin from './components/login/LogInAdmin';
 import { AdminUsers}  from './components/admin/AdminUsers';
+import { AdminBlogs } from './components/admin/AdminBlogs';
 const LazyContact = React.lazy(() => import('./components/contact/Contact'))
 
 
@@ -61,6 +62,7 @@ function App() {
             <Route path='staff-user' element={<StaffUser />} />
             <Route path='admin' element={<Admin />} >
               <Route path='users' element={<AdminUsers />} />
+              <Route path='blogs' element={<AdminBlogs />} />
             </Route>
             <Route path='users' element={<Users />}>  
               <Route path=':userId' element={<UserDetails />} />
