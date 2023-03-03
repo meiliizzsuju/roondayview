@@ -31,7 +31,7 @@ foodblogRouter.get("/:foodblogId",  async (request, response) => {
     response.json(foodblog)
 })
 
-foodblogRouter.post("/", auth ,(request, response) => {
+foodblogRouter.post("/", auth , async (request, response) => {
     const foodblog = createFoodblog({
         title: request.body.title,
         description: request.body.description,
