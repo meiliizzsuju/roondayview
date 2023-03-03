@@ -3,9 +3,9 @@ import { useAuth } from './Auth'
 
 export const RequireAuth = ({children}) => {
     const location = useLocation()
-    const auth =useAuth()
+    const auth = useAuth()
     
-    if(!auth.user) {
+    if(!auth.user && (auth.userAdmin === false)) {
         return <Navigate to= '/login' state={{ path: location.pathname}} />
     }
 
