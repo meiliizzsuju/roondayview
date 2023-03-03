@@ -23,6 +23,7 @@ import Register from './components/register/Register';
 import LogInAdmin from './components/login/LogInAdmin';
 import { AdminUsers}  from './components/admin/AdminUsers';
 import { AdminBlogs } from './components/admin/AdminBlogs';
+import { AdminMessages } from './components/admin/AdminMessages';
 const LazyContact = React.lazy(() => import('./components/contact/Contact'))
 
 
@@ -63,6 +64,7 @@ function App() {
             <Route path='admin' element={<Admin />} >
               <Route path='users' element={<AdminUsers />} />
               <Route path='blogs' element={<AdminBlogs />} />
+              <Route path='messages' element={<AdminMessages/>} />
             </Route>
             <Route path='users' element={<Users />}>  
               <Route path=':userId' element={<UserDetails />} />
