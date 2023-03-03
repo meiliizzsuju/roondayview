@@ -2,13 +2,9 @@
     margin: 2rem 1rem;
 }
 
-.searchbar__container input{
-    width: 100%;
+.searchbar__container .css-aloroh-MuiInputBase-root-MuiOutlinedInput-root{
     line-height: 1rem;
     border-radius: 50px;
-    max-width: 500px;
-    margin: 0 auto;
-    display: block;
 }
 
 @media screen and (min-width: 900px) {
