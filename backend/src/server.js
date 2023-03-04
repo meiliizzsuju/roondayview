@@ -25,7 +25,7 @@ app.get("/", (request, response) => {
     })
 })
 
-app.use(cors(corsOption))
+app.use(cors())
 
 const PORT = process.env.PORT || 5000
 
