@@ -20,7 +20,7 @@ async function registerUser(user) {
         id: userCreated._id
     }
 
-    const token = jwt.sign(payload, "secret")
+    const token = jwt.sign(payload, process.env.JWT_SECERT)
 
     return token
 }
@@ -42,14 +42,13 @@ async function loginUser(user) {
         id: existingUser._id,
     }
 
-    const token = jwt.sign(payload, "secret")
+    const token = jwt.sign(payload, process.env.JWT_SECERT)
 
     return token
 
 }
 
 async function loginAdmin(user) {
-    // Check if the username exist
     const existingUser = await Admin.findOne({username: user.username})
 
     if(!existingUser) {
@@ -66,7 +65,7 @@ async function loginAdmin(user) {
         is_admin: true
     }
 
-    const token = jwt.sign(payload, "secret")
+    const token = jwt.sign(payload, process.env.JWT_SECERT)
 
     return token
 
