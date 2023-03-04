@@ -14,7 +14,7 @@ const PORT = 5000
 
 app.get("/", (request, response) => {
     response.json({
-        data: "Data send"
+        data: "Data Send"
     })
 })
 
