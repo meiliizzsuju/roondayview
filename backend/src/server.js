@@ -19,8 +19,6 @@ const corsOption = {
     optionsSuccessStatus: 200
 }
 
-const PORT = process.env.PORT || 5000
-
 app.get("/", (request, response) => {
     response.json({
         data: "Data Send"
@@ -28,6 +26,8 @@ app.get("/", (request, response) => {
 })
 
 app.use(cors(corsOption))
+
+const PORT = process.env.PORT || 5000
 
 app.use("/foodblogs", foodblogRouter)
 app.use("/users", userRouter)
