@@ -18,7 +18,7 @@ const Register = () => {
 
     const handleSubmit = () => {
         setSubmit(true)
-        axios.post('http://localhost:5000/users/register', {
+        axios.post('/users/register', {
             name: name,
             username: username,
             password: password

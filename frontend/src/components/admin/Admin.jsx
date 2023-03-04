@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container } from '@mui/system';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 import { Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -22,39 +22,42 @@ export const Admin = () => {
         <Box sx={{ my: 5 }}>
           <h1>Admin</h1>
           <div className='admin__nav'>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              startIcon={<PersonIcon />}
-              href="/admin/users"
-              size="large"
-              sx={{ mr: 2}}
-            >
-              Manage User
-            </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              startIcon={<ArticleIcon />}
-              href="/admin/blogs"
-              size="large"
-              sx={{ mr: 2}}
-            >
-              Manage Blogs
-            </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              startIcon={<EmailIcon />}
-              href="/admin/messages"
-              size="large"
-              sx={{ mr: 2}}
-            >
-              Messages
-            </Button>
+            <Link to="/admin/users">
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                startIcon={<PersonIcon />}
+                size="large"
+                sx={{ mr: 2}}
+              >
+                Manage User
+              </Button>
+            </Link>
+            <Link to="/admin/blogs">
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                startIcon={<ArticleIcon />}
+                size="large"
+                sx={{ mr: 2}}
+              >
+                Manage Blogs
+              </Button>
+            </Link>
+            <Link to="/admin/messages">
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                startIcon={<EmailIcon />}
+                size="large"
+                sx={{ mr: 2}}
+              >
+                Messages
+              </Button>
+            </Link>
           </div>
           <Outlet/>
         </Box>

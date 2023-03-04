@@ -8,7 +8,7 @@ const BlogFeed = () => {
     const [ blogs , setBlogs] = useState(null);
 
     useEffect(()=>{
-      axios.get('http://localhost:5000/foodblogs').then((response) => {
+      axios.get('/foodblogs').then((response) => {
         setBlogs(response.data);
       });
     },[])

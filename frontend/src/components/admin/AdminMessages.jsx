@@ -7,7 +7,6 @@ import { styled } from '@mui/material/styles';
 import { Box } from '@mui/system';
 import { Divider } from '@mui/material';
 
-const token = localStorage.getItem('auth-token');
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -17,18 +16,17 @@ const Item = styled(Paper)(({ theme }) => ({
     padding: 20
 }));
 
-  
+
 export const AdminMessages = () => {
     const [messages, setMessages] = useState(null);
-    const [ getMessage, setGetMessage ] = useState(false);
-  
+    
+    const token = localStorage.getItem('auth-token');
   
     useEffect(()=>{
-      axios.get(`http://localhost:5000/contact`,{headers: { Authorization: `Bearer ${token}` }}).then((response) => {
-        setMessages(response.data);
-        setGetMessage(true);
-      });
-    },[getMessage]);
+        axios.get(`/contact`,{headers: { Authorization: `Bearer ${token}` }}).then((response) => {
+            setMessages(response.data);
+        })
+    });
 
     return (
     <div className='adminMessage'>

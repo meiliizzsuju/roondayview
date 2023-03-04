@@ -17,10 +17,13 @@ export const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
+  localStorage.removeItem('auth-token')
+  localStorage.removeItem('user')
+
   const redirectPath = location.state?.path || '/'
  
   const handleLogin = () => {
-      axios.post('http://localhost:5000/users/login', {
+      axios.post('/users/login', {
           username: username,
           password: password
       })
@@ -42,6 +45,8 @@ export const Login = () => {
           }
       });
   }
+
+  console.log("auth user",auth.user)
 
 
   return (
