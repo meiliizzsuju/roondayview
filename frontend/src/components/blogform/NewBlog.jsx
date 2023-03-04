@@ -57,7 +57,7 @@ const NewBlog = ({user}) => {
         if(b_dishNameValid && b_descValid){
             // POST
             axios.post( 
-                'http://localhost:5000/foodblogs',
+                '/foodblogs',
                 {
                     title: b_dishName,
                     description: b_desc,

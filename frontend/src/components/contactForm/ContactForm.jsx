@@ -1,21 +1,54 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 import './contactform.css';
 
 const inputErrorState = ` error-field`;
+const token = localStorage.getItem('auth-token');
 
-const ContactForm = ({title,user}) => {
-
+const ContactForm = ({title}) => {
+    const [name,setName] = useState('');
     const [message,setMessage] = useState('');
     const [fields, setFields] = useState(false); // to check if all the field has been entered
 
     const submitMessage = () =>{
-        if(message){
-            // to be added to BE with userId
-            console.log(message)
+        if(message && name){
+            // POST
+            axios.post(`/contact`,{
+                name: name,
+                message: message
+            },
+            {headers: { Authorization: `Bearer ${token}` }}
+                ).then(function (response){
+                    if(response.status === 200){
+                        alert('Message is sent');
+                        setMessage('')
+                        setName('')
 
-            alert('Message is sent');
-            setMessage('')
+                        setFields(false);
+                    }
+                }).catch(function (error){
+                    switch (error.response.status) {
+                        case 400:
+                            alert(error.response.data['data'])
+                            break;
+                        case 401:
+                            alert(error.response.data['data'])
+                            break;
+                        default:
+                            break;
+                    }
+                    setFields(true);
+
+                    setTimeout(
+                      () => {
+                        setFields(false); // clear after 2 sec
+                      },
+                      5000,
+                    );  
+                });
+
+
         } else{
             setFields(true);
 
@@ -32,6 +65,17 @@ const ContactForm = ({title,user}) => {
         <div className='contactform'>
             <h3>{title}</h3>
             <div className='form-control relative'>
+                <input  
+                    name="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Your Name"
+                    className={(fields&&name === '') ? (inputErrorState) : ('')}
+                    required
+                />
+                {(fields&&message === '') &&(
+                <span className='error-message'>Please provide message</span>
+                )}
                 <textarea  
                     name="message"
                     value={message}

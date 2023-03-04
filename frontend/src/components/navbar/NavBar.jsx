@@ -14,7 +14,7 @@ import './navbar.css';
 
 const Menu = (navLinkStyles) =>{
     const auth = useAuth()
-    console.log('auth',auth.user)
+
     return (
         <nav className='primary-nav'>
             <ul>
@@ -28,31 +28,35 @@ const Menu = (navLinkStyles) =>{
                         Contact
                     </NavLink>
                 </li>
-                <li>
+                {/* <li>
                     <NavLink style={navLinkStyles} to='/staff-user'>
                         Staff
                     </NavLink>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                     <NavLink style={navLinkStyles} to='/reservation'>
                         Reservations
                     </NavLink>
-                </li>
-                <li>
-                    <NavLink style={navLinkStyles} to='/admin'>
-                        Admin
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink style={navLinkStyles} to='/profile'>
-                        Profile
-                    </NavLink>
-                </li>
-                {!auth.user  && (
+                </li> */}
+                {
+                    auth.userAdmin === true &&
+                    <li>
+                        <NavLink style={navLinkStyles} to='/admin'>
+                            Admin
+                        </NavLink>
+                    </li>
+                }
+                {!auth.user  ? (
                     <li>
                         <NavLink style={navLinkStyles} to='/login'>
                         Login
                         </NavLink>  
+                    </li>
+                ):(
+                    <li>
+                        <NavLink style={navLinkStyles} to='/profile'>
+                            Profile
+                        </NavLink>
                     </li>
                 )}
 

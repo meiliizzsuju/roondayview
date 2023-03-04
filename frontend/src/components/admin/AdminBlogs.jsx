@@ -14,7 +14,7 @@ export const AdminBlogs = () => {
     const blog_list = availBlogs;
   
     const confirmDelete = () =>{
-      axios.delete(`http://localhost:5000/foodblogs/${selectedBlog._id}`)
+      axios.delete(`/foodblogs/${selectedBlog._id}`)
       .then(function (response) {
         if(response.status === 200){
           setOpen(false);
@@ -37,7 +37,8 @@ export const AdminBlogs = () => {
     };
   
     useEffect(()=>{
-      axios.get(`http://localhost:5000/foodblogs`).then((response) => {
+      axios.get(`/foodblogs`).then((response) => {
+        console.log(response)
         setAvailBlogs(response.data);
         setConfirmDel(false)
       });

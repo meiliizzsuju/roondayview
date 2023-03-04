@@ -14,7 +14,7 @@ export const AdminUsers = () => {
     const user_list = availUsers;
   
     const confirmDelete = () =>{
-      axios.delete(`http://localhost:5000/users/${selectedUser._id}`)
+      axios.delete(`/users/${selectedUser._id}`)
       .then(function (response) {
         if(response.status === 200){
           setOpen(false);
@@ -37,7 +37,7 @@ export const AdminUsers = () => {
     };
   
     useEffect(()=>{
-      axios.get(`http://localhost:5000/users`).then((response) => {
+      axios.get(`/users`).then((response) => {
         setAvailUsers(response.data);
         setConfirmDel(false)
       });

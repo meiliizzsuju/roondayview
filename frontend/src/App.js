@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import axios from 'axios';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Home from './components/Home';
 import { NavBar } from './components/navbar/NavBar'
@@ -18,13 +19,17 @@ import { Login } from './components/login/LogIn';
 import { Profile } from './components/profile/Profile'
 import { AuthProvider } from './components/Auth';
 import { RequireAuth } from './components/RequireAuth';
+import { RequireAuthAdmin } from './components/RequireAuthAdmin';
 import StaffUser from './components/staffuser/StaffUser';
 import Register from './components/register/Register';
 import LogInAdmin from './components/login/LogInAdmin';
 import { AdminUsers}  from './components/admin/AdminUsers';
 import { AdminBlogs } from './components/admin/AdminBlogs';
+import { AdminMessages } from './components/admin/AdminMessages';
 const LazyContact = React.lazy(() => import('./components/contact/Contact'))
 
+axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const theme = createTheme({
   palette: {
@@ -60,9 +65,16 @@ function App() {
             <Route path='reservation' element={<Reservations />} />
             <Route path='order-summary' element={<OrderSummary />} />
             <Route path='staff-user' element={<StaffUser />} />
-            <Route path='admin' element={<Admin />} >
+            
+            <Route path='admin' element={
+              <RequireAuthAdmin>
+                <Admin />
+              </RequireAuthAdmin>
+            } 
+            >
               <Route path='users' element={<AdminUsers />} />
               <Route path='blogs' element={<AdminBlogs />} />
+              <Route path='messages' element={<AdminMessages/>} />
             </Route>
             <Route path='users' element={<Users />}>  
               <Route path=':userId' element={<UserDetails />} />
