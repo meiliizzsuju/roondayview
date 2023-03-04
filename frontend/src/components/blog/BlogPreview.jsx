@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './blogpreview.css';
 
 const defaultImg = 'https://picsum.photos/640/360'
@@ -18,14 +19,14 @@ const BlogPreview = ({blog}) => {
 
     return (
     <div className='blogpreview'>
-        <a href={blogdetailpath}>
+        <Link to={blogdetailpath}>
             <div className='blogpreview__container'>
                 <img src={checkImg(img)} alt={title} />
                 <div className='blogpreview__text'>
                     <p><b>{title}</b></p>
                 </div>
             </div>
-        </a>
+        </Link>
     </div>
   )
 }

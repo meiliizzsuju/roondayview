@@ -38,6 +38,7 @@ export const AdminBlogs = () => {
   
     useEffect(()=>{
       axios.get(`/foodblogs`).then((response) => {
+        console.log(response)
         setAvailBlogs(response.data);
         setConfirmDel(false)
       });

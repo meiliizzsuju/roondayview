@@ -17,6 +17,9 @@ export const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
+  localStorage.removeItem('auth-token')
+  localStorage.removeItem('user')
+
   const redirectPath = location.state?.path || '/'
  
   const handleLogin = () => {
@@ -42,6 +45,8 @@ export const Login = () => {
           }
       });
   }
+
+  console.log("auth user",auth.user)
 
 
   return (

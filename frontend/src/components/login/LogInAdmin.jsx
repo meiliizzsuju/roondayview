@@ -17,7 +17,10 @@ const LogInAdmin = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const redirectPath = location.state?.path || '/admin'
+  localStorage.removeItem('auth-token')
+  localStorage.removeItem('user')
+
+  const redirectPath = location.state?.path || '/'
  
   const handleLogin = () => {
       axios.post(`/users/admin/login`, {
@@ -34,7 +37,7 @@ const LogInAdmin = () => {
               localStorage.setItem('auth-token',response.data.token);
               localStorage.setItem('user','admin');
               auth.login(username)
-              navigate(redirectPath, { replace: true } )
+              navigate(redirectPath )
           }
       })
       .catch(function (error) {

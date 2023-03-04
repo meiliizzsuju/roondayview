@@ -1,8 +1,8 @@
-import { Container } from "@mui/material";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Container } from "@mui/material";
 import axios from "axios";
 import './blogdetails.css'
-import { useEffect, useState } from "react";
 
 const defaultImg = 'https://picsum.photos/640/360'
 
@@ -30,7 +30,7 @@ export const BlogDetails = () => {
     axios.get(`/foodblogs/${blogId}`).then((response) => {
       setBlog(response.data);
     });
-  })
+  },[blogId])
 
 
   return (
