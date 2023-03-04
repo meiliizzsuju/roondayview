@@ -19,7 +19,7 @@ contactRouter.post("/", auth, async (request, response) => {
     response.json(contactPost)
 })
 
-contactRouter.get("/", admin, async (request, response) => {
+contactRouter.get("/", admin ,async (request, response) => {
     const contactPost = await getContactPost()
     response.json(contactPost)
 })
