@@ -2,11 +2,13 @@ const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
 const helmet = require("helmet")
-require("dotenv").config()
+const dotenv = require("dotenv");
 
 const foodblogRouter = require("./controllers/foodblogs/foodblogRoutes")
 const userRouter = require("./controllers/users/userRoutes")
 const contactRouter = require("./controllers/contact/contactRoutes")
+
+dotenv.config();
 
 const app = express()
 
