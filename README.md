@@ -35,6 +35,8 @@ Installation Guide for Front end/Back end :
 
     1. run `npm install`
 
+    -- if come error `npm install --force`
+
 
 then 
 
