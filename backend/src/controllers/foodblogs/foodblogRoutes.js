@@ -1,5 +1,6 @@
 const express = require("express")
 
+// Get all the functions from the foodblogControllers
 const { getFoodblogs, 
         getFoodblogByID,
         createFoodblog,
