@@ -16,10 +16,6 @@ app.use(helmet())
 
 app.use(express.json())
 
-const corsOption = {
-    origin: ["http:localhost:3000", "https://legendary-arithmetic-c1ee45.netlify.app"], 
-    optionsSuccessStatus: 200
-}
 
 app.get("/", (request, response) => {
     response.json({
@@ -27,14 +23,11 @@ app.get("/", (request, response) => {
     })
 })
 
-<<<<<<< HEAD
-=======
 const corsOption = {
     origin: ["http://localhost:3000", "https://legendary-arithmetic-c1ee45.netlify.app"], 
     optionsSuccessStatus: 200
 }
 
->>>>>>> 7655cbf788298c12e4e4e204b959af56e7d92311
 app.use(cors(corsOption))
 
 const PORT = process.env.PORT || 5000
