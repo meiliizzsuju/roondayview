@@ -18,13 +18,14 @@ async function getFoodblogByID (foodblogId) {
 }
 
 
-// Insert the foodblog into the database and return that created floodblog
+// Insert the foodblog into the database and return that created foodblog
 async function createFoodblog(foodblog) {
     const newFoodblog = await Foodblog.create(foodblog)
 
     return newFoodblog
 }
 
+// Delete the foodblog from the database return that deleted foodblog
 async function deleteFoodblog(foodblogId){
     const deletedFoodblog = await Foodblog.findByIdAndDelete(foodblogId)
     return deletedFoodblog

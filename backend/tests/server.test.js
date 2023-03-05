@@ -2,23 +2,8 @@ const request = require("supertest")
 const mongoose = require("mongoose")
 const { app } = require("../src/server")
 
-let token;
 
-beforeAll(async () => {
-    await mongoose.connect("mongodb://127.0.0.1:27017/roondayview")
-
-    const response = await request(app).post("/admin/login").send({
-        username: "admin",
-        password: "password"
-    })
-    token = response.body.token
-})
-
-afterAll(async () => {
-    await mongoose.connection.close()
-})
-
-// 1
+// 1 Checking if the server is running
 describe("Server homepage", () => {
     it("shows data sent message", async () => {
         const response = await request(app).get("/")
@@ -27,6 +12,11 @@ describe("Server homepage", () => {
         expect(response.body.data).toBe("Data Send")
     })
 })
+
+
+
+
+
 
 
 

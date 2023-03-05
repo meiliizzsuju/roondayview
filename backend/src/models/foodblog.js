@@ -10,7 +10,7 @@ const FoodblogSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        minLength: 8
+        minLength: 5
     },
     description:{
         type: String,
