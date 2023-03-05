@@ -43,6 +43,16 @@ Back-end Dependencies:
     Supertest
     nodemon
 
+Installation Guide for Front end: 
+
+    1. run npm install
+
+
+then 
+
+    2. run npm start
+
+
 Front-end Dependencies
 
 	
@@ -50,7 +60,7 @@ Front-end Dependencies
     emotion/react
     emotion/styled
     mui/icons-material
-    mui/lab"
+    mui/lab
     mui/material
     mui/styles
     autosuggest-highlight
@@ -61,6 +71,8 @@ Front-end Dependencies
 
 ---
 # User Manual testing 
+
+User manual testing was undertaken to catch any bugs along the userflow. Below is a link to a spreadsheet accounting to different users and their test case.
 
 https://docs.google.com/spreadsheets/d/1jiFlDkze-NY1NwbQw-f5flHpFezwxvLI1yiMkoVjws8/edit?usp=sharing
 
