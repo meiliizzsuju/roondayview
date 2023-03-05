@@ -23,7 +23,7 @@ app.get("/", (request, response) => {
 })
 
 const corsOption = {
-    orgin: ["http:localhost:3000", "https://legendary-arithmetic-c1ee45.netlify.app"], 
+    origin: ["http:localhost:3000", "https://legendary-arithmetic-c1ee45.netlify.app"], 
     optionsSuccessStatus: 200
 }
 
