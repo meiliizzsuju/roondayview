@@ -40,6 +40,12 @@ then
 
     2. run `npm start`
 
+# Setting Up the env file
+
+There's a sample env file in the backend folder. You can use that to fill in your jwt secrets and set up your own mongodb. 
+
+![](docs/env.png)
+
 Back-end Dependencies:
 	
 	
@@ -75,13 +81,15 @@ Front-end Dependencies
 
 User manual testing was undertaken to catch any bugs along the userflow. Below is a link to a spreadsheet accounting to different users and their test case.
 
-Testing documentation [click khere](https://docs.google.com/spreadsheets/d/1jiFlDkze-NY1NwbQw-f5flHpFezwxvLI1yiMkoVjws8/edit?usp=sharing)
+Testing documentation [click here](https://docs.google.com/spreadsheets/d/1jiFlDkze-NY1NwbQw-f5flHpFezwxvLI1yiMkoVjws8/edit?usp=sharing)
 
 ---
 
 # Commits:
 
-Github commits [Click here](https://github.com/david10382/roondayview/commits/main)
+David Github commits [Click here](https://github.com/david10382/roondayview/commits/main)
+
+Tommy Github commits [Click here](https://github.com/TommyT77/roondayview/commits/main)
 
 ---
 # Problem Identified
@@ -371,35 +379,72 @@ Administrator page
 
 Trello Board Link: [Click here](https://trello.com/b/MnKH8tLK/roondayview)
 
----
-
 ## 06/02/2023
 ![](docs/Trello/screenshot-1.png)
 
-<br>
+---
 
 ## 07/02/2023
 ![](docs/Trello/screenshot-2.png)
 
-<br>
+---
 
 ## 08/02/2023
 ![](docs/Trello/screenshot-3.png)
 
-<br>
+---
 
 ## 08/02/2023
 ![](docs/Trello/screenshot-4.png)
 
-<br>
+---
 
 ## 10/02/2023
 ![](docs/Trello/screenshot-5.png)
 
-<br>
+---
 
 ## 11/02/2023
 ![](docs/Trello/screenshot-6.png)
+
+
+## Part B Trello
+
+# 21/02/2023
+
+![](docs/trello-2/feb-21.png)
+
+---
+
+# 26/02/2023
+
+![](docs/trello-2/feb-26.png)
+
+---
+
+# 01/03/2023
+
+![](docs/trello-2/mar-1.png)
+
+---
+
+# 03/03/2023
+
+![](docs/trello-2/mar-3.png)
+
+---
+
+# 04/03/2023
+
+![](docs/trello-2/mar-4.png)
+
+---
+
+# 05/03/2023
+
+![](docs/trello-2/mar-5.png)
+
+---
 
 
 
