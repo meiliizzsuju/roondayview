@@ -68,7 +68,7 @@ export const AdminBlogs = () => {
                         const parts = parse(option.title, matches);
     
                         return (
-                        <li {...props}>
+                        <li {...props} key={option._id}>
                             <div>
                             {parts.map((part, index) => (
                                 <span

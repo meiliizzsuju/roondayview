@@ -56,20 +56,18 @@ export const AdminUsers = () => {
                     id="userlist"
                     sx={{ width: 300 }}
                     options={user_list}
-                    getOptionLabel={(option) => option.username}
-                    onChange={(event, value) => setSelectedUser(value)}
-                    value={selectedUser}
+                    getOptionLabel={(option) => option?.username || ""}
                     renderInput={(params) => (
                         <TextField {...params} label="search here" margin="normal" />
                     )}
                     renderOption={(props, option, { inputValue }) => {
                         const matches = match(option.username, inputValue, { insideWords: true });
                         const parts = parse(option.username, matches);
-    
+
                         return (
-                        <li {...props}>
+                        <li {...props} key={option._id}>
                             <div>
-                            {parts.map((part, index) => (
+                            {parts?.map((part, index) => (
                                 <span
                                 key={index}
                                 style={{
