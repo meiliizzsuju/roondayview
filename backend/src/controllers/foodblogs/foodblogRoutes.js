@@ -32,6 +32,7 @@ foodblogRouter.get("/:foodblogId",  async (request, response) => {
     response.json(foodblog)
 })
 
+// This will post another foodblog through the http method post.
 foodblogRouter.post("/", auth , async (request, response) => {
     const foodblog = createFoodblog({
         title: request.body.title,
@@ -41,9 +42,11 @@ foodblogRouter.post("/", auth , async (request, response) => {
         cuisine: request.body.cuisine
     })
 
+    //Respond and return the foodblog data as a json
     response.json(foodblog)
 })
 
+// This will delete a specific food blog through a foodblog ID. This uses a http method delete.
 foodblogRouter.delete("/:foodblogId", async (request, response) => {
     const foodblog = await deleteFoodblog(request.params.foodblogId)
     response.json(foodblog)
