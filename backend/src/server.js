@@ -16,16 +16,17 @@ app.use(helmet())
 
 app.use(express.json())
 
-const corsOption = {
-    origin: ["http:localhost:3000", "https://legendary-arithmetic-c1ee45.netlify.app"], 
-    optionsSuccessStatus: 200
-}
 
 app.get("/", (request, response) => {
     response.json({
         data: "Data Send"
     })
 })
+
+const corsOption = {
+    origin: ["http://localhost:3000", "https://legendary-arithmetic-c1ee45.netlify.app"], 
+    optionsSuccessStatus: 200
+}
 
 app.use(cors(corsOption))
 
