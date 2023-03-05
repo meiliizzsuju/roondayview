@@ -87,7 +87,9 @@ Testing documentation [click here](https://docs.google.com/spreadsheets/d/1jiFlD
 
 # Commits:
 
-Github commits [Click here](https://github.com/david10382/roondayview/commits/main)
+David Github commits [Click here](https://github.com/david10382/roondayview/commits/main)
+
+Tommy Github commits [Click here](https://github.com/TommyT77/roondayview/commits/main)
 
 ---
 # Problem Identified
