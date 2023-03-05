@@ -1,8 +1,8 @@
+import { useState} from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { Container, InputAdornment, TextField } from '@mui/material';
 import { Box } from '@mui/system';
-import { useState} from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../Auth';
 
 import axios from "axios";
@@ -30,11 +30,12 @@ export const Login = () => {
       .then(function (response) {
           if(response.status === 200){
               alert('Login completed');
-              setSubmit(false) 
-              setUsername('')
-              setPassword('')
-
+              setSubmit(false);
+              setUsername('');
+              setPassword('');
+              // save auth on localStorage
               localStorage.setItem('auth-token',response.data.token)
+              localStorage.setItem('username',username)
               auth.login(username)
               navigate(redirectPath, { replace: true } )
           }
@@ -45,8 +46,6 @@ export const Login = () => {
           }
       });
   }
-
-  console.log("auth user",auth.user)
 
 
   return (

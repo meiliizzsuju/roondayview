@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className='homepage'>
       <Container>
-        <SearchBar/>
+        <SearchBar key="homepage_searchbar"/>
         <Trends/>
         <BlogFeed key="homefeed"/>
       </Container>

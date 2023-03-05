@@ -38,6 +38,7 @@ const SearchBar = () => {
                     onChange={(event, value) => setSearchItem(value)}
                     value={searchItem}
                     onSelect={onSearch}
+                    key='bloglist'
                     renderInput={(params) => (
                         <TextField {...params} label="search here" margin="normal" />
                     )}
@@ -46,11 +47,11 @@ const SearchBar = () => {
                         const parts = parse(option.title, matches);
     
                         return (
-                        <li {...props}>
+                        <li {...props} key={option._id}>
                             <div>
                             {parts.map((part, index) => (
                                 <span
-                                key={index}
+                                key={index+part.text}
                                 style={{
                                     fontWeight: part.highlight ? 700 : 400,
                                 }}
