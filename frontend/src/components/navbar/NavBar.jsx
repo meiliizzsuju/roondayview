@@ -28,6 +28,7 @@ const Menu = (navLinkStyles) =>{
                         Contact
                     </NavLink>
                 </li>
+                {/* Future Features to be released */}
                 {/* <li>
                     <NavLink style={navLinkStyles} to='/staff-user'>
                         Staff
@@ -38,6 +39,7 @@ const Menu = (navLinkStyles) =>{
                         Reservations
                     </NavLink>
                 </li> */}
+                {/* Only admin should be allow to see the link */}
                 {
                     auth.userAdmin === true &&
                     <li>

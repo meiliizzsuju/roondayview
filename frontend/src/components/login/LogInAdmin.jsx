@@ -17,8 +17,9 @@ const LogInAdmin = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  localStorage.removeItem('auth-token')
-  localStorage.removeItem('user')
+  localStorage.removeItem('auth-token');
+  localStorage.removeItem('user');
+  localStorage.removeItem('username',username);
 
   const redirectPath = location.state?.path || '/'
  
@@ -30,14 +31,16 @@ const LogInAdmin = () => {
       .then(function (response) {
           if(response.status === 200){
               alert('Login completed');
-              setSubmit(false) 
-              setUsername('')
-              setPassword('')
-
+              setSubmit(false);
+              setUsername('');
+              setPassword('');
+              // save auth on localStorage
               localStorage.setItem('auth-token',response.data.token);
               localStorage.setItem('user','admin');
-              auth.login(username)
-              navigate(redirectPath )
+              localStorage.setItem('username',username);
+              auth.login(username);
+              auth.loginAdmin(true);
+              navigate(redirectPath );
           }
       })
       .catch(function (error) {
