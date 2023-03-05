@@ -23,11 +23,14 @@ https://github.com/david10382/Readme-T3A2-A/blob/main/Readme-T3A2-A.md
 ---
 # Installation Guide
 
-Local Machine:
+Installation Guide for Front end/Back end : 
 
-Npm i (For both frontend and backend)
+    1. run `npm install`
 
 
+then 
+
+    2. run `npm start`
 
 Back-end Dependencies:
 	
@@ -43,6 +46,7 @@ Back-end Dependencies:
     Supertest
     nodemon
 
+
 Front-end Dependencies
 
 	
@@ -50,17 +54,20 @@ Front-end Dependencies
     emotion/react
     emotion/styled
     mui/icons-material
-    mui/lab"
+    mui/lab
     mui/material
     mui/styles
     autosuggest-highlight
     styled-components
 
 
+
 		
 
 ---
 # User Manual testing 
+
+User manual testing was undertaken to catch any bugs along the userflow. Below is a link to a spreadsheet accounting to different users and their test case.
 
 https://docs.google.com/spreadsheets/d/1jiFlDkze-NY1NwbQw-f5flHpFezwxvLI1yiMkoVjws8/edit?usp=sharing
 
@@ -88,7 +95,9 @@ https://docs.google.com/spreadsheets/d/1jiFlDkze-NY1NwbQw-f5flHpFezwxvLI1yiMkoVj
 
 ---
 
-#
+# Commits Link:
+
+https://github.com/david10382/roondayview/commits/main
 
 ---
 
