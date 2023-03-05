@@ -23,11 +23,14 @@ https://github.com/david10382/Readme-T3A2-A/blob/main/Readme-T3A2-A.md
 ---
 # Installation Guide
 
-Local Machine:
+Installation Guide for Front end/Back end : 
 
-Npm i (For both frontend and backend)
+    1. run `npm install`
 
 
+then 
+
+    2. run `npm start`
 
 Back-end Dependencies:
 	
@@ -43,15 +46,6 @@ Back-end Dependencies:
     Supertest
     nodemon
 
-Installation Guide for Front end: 
-
-    1. run npm install
-
-
-then 
-
-    2. run npm start
-
 
 Front-end Dependencies
 
@@ -65,6 +59,7 @@ Front-end Dependencies
     mui/styles
     autosuggest-highlight
     styled-components
+
 
 
 		
