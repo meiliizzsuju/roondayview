@@ -3,19 +3,12 @@ import { Box, Container } from '@mui/system';
 import { Link, Outlet } from 'react-router-dom';
 
 import { Button } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 import PersonIcon from '@mui/icons-material/Person';
 import ArticleIcon from '@mui/icons-material/Article';
 import EmailIcon from '@mui/icons-material/Email';
 
 
 export const Admin = () => {
-  const classes = makeStyles((theme) => ({
-    button: {
-      margin: theme.spacing(1),
-    },
-  }));
-  
   return (
     <div className='adminuser'>
       <Container>
@@ -25,8 +18,7 @@ export const Admin = () => {
             <Link to="/admin/users">
               <Button
                 variant="contained"
-                color="secondary"
-                className={classes.button}
+                color="secondary" 
                 startIcon={<PersonIcon />}
                 size="large"
                 sx={{ mr: 2}}
@@ -38,7 +30,6 @@ export const Admin = () => {
               <Button
                 variant="contained"
                 color="secondary"
-                className={classes.button}
                 startIcon={<ArticleIcon />}
                 size="large"
                 sx={{ mr: 2}}
@@ -50,7 +41,6 @@ export const Admin = () => {
               <Button
                 variant="contained"
                 color="secondary"
-                className={classes.button}
                 startIcon={<EmailIcon />}
                 size="large"
                 sx={{ mr: 2}}
